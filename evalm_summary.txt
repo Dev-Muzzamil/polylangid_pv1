@@ -1,0 +1,91 @@
+================================================================================
+                        EVALUATION SUMMARY REPORT (TEXT ONLY)
+================================================================================
+
+SUMMARY STATISTICS
+--------------------------------------------------------------------------------
+Total Sentences      : 10000
+Exact Matches        : 2032 (20.32%)
+Partial Matches      : 7917 (79.17%)
+No Matches           : 51 (0.51%)
+
+PER-LANGUAGE METRICS
+--------------------------------------------------------------------------------
+LANG   | Precision | Recall | F1
+----------------------------------------
+AR     |   0.82    |  0.99 | 0.90
+BN     |   0.99    |  0.99 | 0.99
+DE     |   0.73    |  0.63 | 0.68
+EN     |   0.31    |  0.69 | 0.43
+ES     |   0.66    |  0.73 | 0.70
+FR     |   0.73    |  0.69 | 0.71
+HI     |   1.00    |  1.00 | 1.00
+ID     |   0.55    |  0.54 | 0.54
+IT     |   0.79    |  0.62 | 0.69
+JA     |   0.74    |  0.74 | 0.74
+KO     |   0.99    |  0.99 | 0.99
+NL     |   0.91    |  0.61 | 0.73
+PL     |   0.95    |  0.78 | 0.86
+PT     |   0.72    |  0.50 | 0.59
+RU     |   1.00    |  1.00 | 1.00
+TH     |   1.00    |  1.00 | 1.00
+TR     |   0.57    |  0.62 | 0.60
+UR     |   0.99    |  0.80 | 0.88
+VI     |   0.82    |  0.89 | 0.85
+ZH     |   0.77    |  0.65 | 0.70
+----------------------------------------
+Macro F1 Score: 0.78
+
+TOP 50 UNMATCHED SENTENCES
+--------------------------------------------------------------------------------
+  1. inovação 民族精神 modernisasi
+  2. pensiero 構造的 창조적 contemporain
+  3. Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体
+  4. bền vững serendipitous energía качество kualitas
+  5. pensiero sesquipedalian salud Internet رجحان
+  6. creativo nghiên cứu إنترنت философия
+  7. فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma
+  8. valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল
+  9. fenômeno সাহিত্য innowacja
+ 10. giá trị luận verde 全球化 discombobulated वैश्विकीकरण 생태학
+ 11. medeniyet tin tưởng educazione amour সমষ্টিগত
+ 12. 智慧 ความคิด राष्ट्रीय مهارة
+ 13. durable große आध्यात्मिक moral socjalizm
+ 14. creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत
+ 15. структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft
+ 16. eğitim nationalisme biotecnologia قيمية มีค่า 의식 মূল্যতত্ত্ব
+ 17. 영적 modern اختراع patrimônio
+ 18. การแสดงออก 表現 hy vọng eksistensi floccinaucinihilipilification
+ 19. ชุมชน estructural 幸福 দর্শন инновация deoxyribonucleic traditionell
+ 20. rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio
+ 21. radiant 政治 revolução idealista
+ 22. internet インターネット estética mégadonnées multifaceted 스타일
+ 23. เทคโนโลยี moderno coletivo музыка 가치있는
+ 24. পরিবেশীয় अकादमिक reformizm cách mạng
+ 25. luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán
+ 26. 혁명 mentalité chính trị euphoria
+ 27. 传统文化 глобализация デジタル tradisi
+ 28. magnificent giá trị luận 心理状态 Denken moral penelitian
+ 29. ментальность Revolution عولمة valioso kỹ năng humanitaire
+ 30. inteligencia اختراع modern 政治
+ 31. comunitario miras kollektiv 인본주의 existence আধুনিক
+ 32. সাহিত্য gemeinschaftlich материализм digital tư duy 도덕적
+ 33. morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe
+ 34. patrimonio internet أدب কোয়ান্টাম ความรู้
+ 35. جمال وجود phenomenological développement духовность
+ 36. سبز innovazione innowacja 이상주의 musik सांस्कृतिक experience
+ 37. chủ nghĩa cải cách ekolojik contemporâneo
+ 38. مثالی historia 创新思维 digital দক্ষতা kesadaran
+ 39. اظہار kunstmatige 유산 सामूहिक
+ 40. technologie творческий humanisme जीवन
+ 41. 美しさ вычисления การแสดงออก storia 양자
+ 42. doświadczenie enchanting гармоничный 中华民族伟大复兴 حديث valores hiện đại hóa
+ 43. tradizionale معلومات 量子 人工智能 인본주의 มรดก
+ 44. Literatur idealista 정신력 供给侧结构性改革 বৃহৎতথ্য confiance политика
+ 45. inteligência desarrollo 사회주의
+ 46. наследие kalite metodologia di sản biotecnologia กลมกลืน spiritualiteit
+ 47. بین الاقوامی szczęście ecologico biotechnologie 가치있는
+ 48. zdrowie チェーン moral yapay
+ 49. science değerli traditie
+ 50. tư duy 文学 komputasi natura 大数据
+
