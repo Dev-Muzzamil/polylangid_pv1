@@ -42,7 +42,7 @@ def main():
     overall_start_time = time.time()
     print("Loading test data...")
     try:
-        with open("multilingual_dataset.json", "r", encoding="utf-8") as f:
+        with open("multilingual_dataset_10k.json", "r", encoding="utf-8") as f:
             dataset = json.load(f)
         if _known_args.limit:
             dataset = dataset[:_known_args.limit]
