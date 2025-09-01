@@ -2,3 +2,9 @@
 2025-09-01 19:22:15,071 - polylang_evaluate - INFO - Import time: 20.82ms (deterministic=False, cpu=True)
 2025-09-01 19:22:15,071 - polylang_evaluate - WARNING - sklearn not available: No module named 'sklearn'
 2025-09-01 19:22:15,078 - polylang_evaluate - WARNING - Visualization libraries not fully available: No module named 'matplotlib'
+2025-09-01 19:26:56,375 - D1_EnhancedPolyLangID - WARNING - Missing dependencies: ['transformers', 'torch', 'fasttext', 'jieba', 'janome', 'pythainlp', 'pyvi', 'Sastrawi']
+2025-09-01 19:26:56,376 - polylang_evaluate - INFO - Import time: 24.22ms (deterministic=False, cpu=True)
+2025-09-01 19:26:56,921 - polylang_evaluate - WARNING - Visualization libraries not fully available: No module named 'matplotlib'
+2025-09-01 19:29:38,932 - D1_EnhancedPolyLangID - WARNING - Missing dependencies: ['transformers', 'torch', 'fasttext', 'jieba', 'janome', 'pythainlp', 'pyvi', 'Sastrawi']
+2025-09-01 19:29:38,933 - polylang_evaluate - INFO - Import time: 25.05ms (deterministic=False, cpu=True)
+2025-09-01 19:29:39,439 - polylang_evaluate - WARNING - Visualization libraries not fully available: No module named 'matplotlib'

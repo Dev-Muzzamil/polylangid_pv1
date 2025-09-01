@@ -27,37 +27,60 @@ pre { background: #f8f8f8; border-radius: 4px; padding: 8px;}
 <body>
 <section>
 <h1>PolyLangID Evaluation Detailed Report</h1>
-<p><small>Generated: 2025-09-01 19:22:16</small></p>
+<p><small>Generated: 2025-09-01 19:29:41</small></p>
 
 <section class='summblock'><h2>Summary Statistics</h2>
 <div style='display: flex; gap: 1em; flex-wrap: wrap; margin-bottom: 2em;'>
 
     <div class="metric-card" style="flex: 1; min-width: 180px;">
-        <div class="metric-value">100</div>
+        <div class="metric-value">200</div>
         <div class="metric-label">Total Samples</div>
     </div>
     
 
     <div class="metric-card" style="flex: 1; min-width: 180px;">
-        <div class="metric-value">1.0%</div>
+        <div class="metric-value">0.5%</div>
         <div class="metric-label">Exact Matches (1)</div>
     </div>
     
 
     <div class="metric-card" style="flex: 1; min-width: 180px;">
-        <div class="metric-value">87.0%</div>
-        <div class="metric-label">Partial Matches (87)</div>
+        <div class="metric-value">86.5%</div>
+        <div class="metric-label">Partial Matches (173)</div>
     </div>
     
 
     <div class="metric-card" style="flex: 1; min-width: 180px;">
-        <div class="metric-value">12.0%</div>
-        <div class="metric-label">No Matches (12)</div>
+        <div class="metric-value">13.0%</div>
+        <div class="metric-label">No Matches (26)</div>
     </div>
     
 </div>
-<h3>Per-language Metrics</h3>
-<p><em>sklearn not available - detailed metrics disabled</em></p>
+<h3>Per-language Metrics</h3><table>
+<tr><th>Language</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+<tr><td>AR</td><td>0.36</td><td>0.80</td><td>0.50</td></tr>
+<tr><td>BN</td><td>0.92</td><td>0.92</td><td>0.92</td></tr>
+<tr><td>DE</td><td>0.13</td><td>0.20</td><td>0.16</td></tr>
+<tr><td>EN</td><td>0.09</td><td>0.29</td><td>0.13</td></tr>
+<tr><td>ES</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>FR</td><td>0.14</td><td>0.64</td><td>0.23</td></tr>
+<tr><td>HI</td><td>0.89</td><td>0.89</td><td>0.89</td></tr>
+<tr><td>ID</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>IT</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>JA</td><td>0.50</td><td>0.07</td><td>0.12</td></tr>
+<tr><td>KO</td><td>0.96</td><td>0.96</td><td>0.96</td></tr>
+<tr><td>NL</td><td>0.50</td><td>0.17</td><td>0.25</td></tr>
+<tr><td>PL</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>PT</td><td>1.00</td><td>0.11</td><td>0.20</td></tr>
+<tr><td>RU</td><td>1.00</td><td>1.00</td><td>1.00</td></tr>
+<tr><td>TH</td><td>1.00</td><td>1.00</td><td>1.00</td></tr>
+<tr><td>TR</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>UNKNOWN</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>UR</td><td>0.71</td><td>0.26</td><td>0.38</td></tr>
+<tr><td>VI</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>ZH</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+</table>
+<b>Macro F1 Score:</b> 0.32<br>
 </section>
 <section><h2>Complexity Analysis</h2>
 <div class='complexity-container'>
@@ -66,8 +89,8 @@ pre { background: #f8f8f8; border-radius: 4px; padding: 8px;}
 <table><tr><th>Switches</th><th>Accuracy</th><th>Sample Count</th></tr>
 <tr><td>7</td><td>0.00</td><td>6</td></tr>
 <tr><td>4</td><td>0.00</td><td>6</td></tr>
-<tr><td>3</td><td>0.00</td><td>6</td></tr>
-<tr><td>2</td><td>0.08</td><td>6</td></tr>
+<tr><td>3</td><td>0.03</td><td>6</td></tr>
+<tr><td>2</td><td>0.00</td><td>6</td></tr>
 <tr><td>5</td><td>0.00</td><td>6</td></tr>
 <tr><td>6</td><td>0.00</td><td>6</td></tr>
 </table>
@@ -76,7 +99,7 @@ pre { background: #f8f8f8; border-radius: 4px; padding: 8px;}
 <h3>Effect of Sentence Length</h3>
 <table><tr><th>Length (chars)</th><th>Accuracy</th></tr>
 <tr><td>50-100</td><td>0.00</td></tr>
-<tr><td>0-50</td><td>0.02</td></tr>
+<tr><td>0-50</td><td>0.01</td></tr>
 </table>
 </div>
 <div class='complexity-box'>
@@ -84,8 +107,8 @@ pre { background: #f8f8f8; border-radius: 4px; padding: 8px;}
 <table><tr><th>Languages</th><th>Accuracy</th></tr>
 <tr><td>8</td><td>0.00</td></tr>
 <tr><td>5</td><td>0.00</td></tr>
-<tr><td>4</td><td>0.00</td></tr>
-<tr><td>3</td><td>0.08</td></tr>
+<tr><td>4</td><td>0.03</td></tr>
+<tr><td>3</td><td>0.00</td></tr>
 <tr><td>6</td><td>0.00</td></tr>
 <tr><td>7</td><td>0.00</td></tr>
 </table>
@@ -94,62 +117,67 @@ pre { background: #f8f8f8; border-radius: 4px; padding: 8px;}
 </section>
 <section><h2>Per-Language Aggregate Metrics</h2>
 <table><tr><th>Lang</th><th>Precision</th><th>Recall</th><th>F1</th><th>Gold Count</th><th>Pred Count</th><th>Correct</th></tr>
-<tr><td>AR</td><td>1.00</td><td>0.50</td><td>0.67</td><td>24</td><td>12</td><td>12</td></tr>
-<tr><td>BN</td><td>1.00</td><td>1.00</td><td>1.00</td><td>19</td><td>19</td><td>19</td></tr>
-<tr><td>DE</td><td>1.00</td><td>0.23</td><td>0.38</td><td>26</td><td>6</td><td>6</td></tr>
-<tr><td>EN</td><td>1.00</td><td>0.31</td><td>0.47</td><td>26</td><td>8</td><td>8</td></tr>
-<tr><td>ES</td><td>1.00</td><td>0.15</td><td>0.26</td><td>27</td><td>4</td><td>4</td></tr>
-<tr><td>FR</td><td>1.00</td><td>0.09</td><td>0.17</td><td>33</td><td>3</td><td>3</td></tr>
-<tr><td>HI</td><td>1.00</td><td>1.00</td><td>1.00</td><td>25</td><td>25</td><td>25</td></tr>
-<tr><td>ID</td><td>1.00</td><td>0.73</td><td>0.84</td><td>22</td><td>16</td><td>16</td></tr>
-<tr><td>IT</td><td>1.00</td><td>0.15</td><td>0.26</td><td>27</td><td>4</td><td>4</td></tr>
-<tr><td>JA</td><td>1.00</td><td>0.19</td><td>0.32</td><td>26</td><td>5</td><td>5</td></tr>
-<tr><td>KO</td><td>1.00</td><td>1.00</td><td>1.00</td><td>39</td><td>39</td><td>39</td></tr>
-<tr><td>NL</td><td>1.00</td><td>0.44</td><td>0.62</td><td>18</td><td>8</td><td>8</td></tr>
-<tr><td>PL</td><td>0.00</td><td>0.00</td><td>0.00</td><td>24</td><td>0</td><td>0</td></tr>
-<tr><td>PT</td><td>1.00</td><td>0.27</td><td>0.42</td><td>30</td><td>8</td><td>8</td></tr>
-<tr><td>RU</td><td>1.00</td><td>1.00</td><td>1.00</td><td>30</td><td>30</td><td>30</td></tr>
-<tr><td>TH</td><td>1.00</td><td>1.00</td><td>1.00</td><td>30</td><td>30</td><td>30</td></tr>
-<tr><td>TR</td><td>0.24</td><td>1.00</td><td>0.39</td><td>27</td><td>112</td><td>27</td></tr>
-<tr><td>UNKNOWN</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0</td><td>37</td><td>0</td></tr>
-<tr><td>UR</td><td>0.74</td><td>1.00</td><td>0.85</td><td>25</td><td>34</td><td>25</td></tr>
-<tr><td>VI</td><td>0.00</td><td>0.00</td><td>0.00</td><td>31</td><td>0</td><td>0</td></tr>
-<tr><td>ZH</td><td>0.00</td><td>0.00</td><td>0.00</td><td>26</td><td>0</td><td>0</td></tr>
+<tr><td>AR</td><td>0.60</td><td>1.00</td><td>0.75</td><td>49</td><td>82</td><td>49</td></tr>
+<tr><td>BN</td><td>1.00</td><td>1.00</td><td>1.00</td><td>38</td><td>38</td><td>38</td></tr>
+<tr><td>DE</td><td>1.00</td><td>0.85</td><td>0.92</td><td>55</td><td>47</td><td>47</td></tr>
+<tr><td>EN</td><td>0.67</td><td>1.00</td><td>0.80</td><td>46</td><td>69</td><td>46</td></tr>
+<tr><td>ES</td><td>1.00</td><td>0.12</td><td>0.21</td><td>51</td><td>6</td><td>6</td></tr>
+<tr><td>FR</td><td>0.30</td><td>1.00</td><td>0.46</td><td>66</td><td>218</td><td>66</td></tr>
+<tr><td>HI</td><td>1.00</td><td>1.00</td><td>1.00</td><td>56</td><td>56</td><td>56</td></tr>
+<tr><td>ID</td><td>1.00</td><td>0.24</td><td>0.39</td><td>49</td><td>12</td><td>12</td></tr>
+<tr><td>IT</td><td>1.00</td><td>0.08</td><td>0.15</td><td>61</td><td>5</td><td>5</td></tr>
+<tr><td>JA</td><td>1.00</td><td>0.14</td><td>0.25</td><td>56</td><td>8</td><td>8</td></tr>
+<tr><td>KO</td><td>1.00</td><td>1.00</td><td>1.00</td><td>66</td><td>66</td><td>66</td></tr>
+<tr><td>NL</td><td>1.00</td><td>0.24</td><td>0.39</td><td>46</td><td>11</td><td>11</td></tr>
+<tr><td>PL</td><td>0.00</td><td>0.00</td><td>0.00</td><td>44</td><td>0</td><td>0</td></tr>
+<tr><td>PT</td><td>1.00</td><td>0.02</td><td>0.03</td><td>63</td><td>1</td><td>1</td></tr>
+<tr><td>RU</td><td>1.00</td><td>1.00</td><td>1.00</td><td>49</td><td>49</td><td>49</td></tr>
+<tr><td>TH</td><td>1.00</td><td>1.00</td><td>1.00</td><td>63</td><td>63</td><td>63</td></tr>
+<tr><td>TR</td><td>0.00</td><td>0.00</td><td>0.00</td><td>52</td><td>0</td><td>0</td></tr>
+<tr><td>UNKNOWN</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0</td><td>78</td><td>0</td></tr>
+<tr><td>UR</td><td>1.00</td><td>0.24</td><td>0.39</td><td>50</td><td>12</td><td>12</td></tr>
+<tr><td>VI</td><td>0.00</td><td>0.00</td><td>0.00</td><td>63</td><td>0</td><td>0</td></tr>
+<tr><td>ZH</td><td>0.00</td><td>0.00</td><td>0.00</td><td>53</td><td>0</td><td>0</td></tr>
 </table>
 </section>
 <section><h2>Error Analysis Summary</h2>
 <table><tr><th>Error Type</th><th>Language</th><th>Count</th></tr>
-<tr><td>wrong_lang</td><td>AR</td><td>16</td></tr>
-<tr><td>boundary_error</td><td>AR</td><td>3</td></tr>
-<tr><td>wrong_lang</td><td>DE</td><td>4</td></tr>
-<tr><td>boundary_error</td><td>DE</td><td>16</td></tr>
-<tr><td>similar_lang</td><td>DE</td><td>1</td></tr>
-<tr><td>boundary_error</td><td>EN</td><td>17</td></tr>
-<tr><td>wrong_lang</td><td>EN</td><td>8</td></tr>
-<tr><td>boundary_error</td><td>ES</td><td>21</td></tr>
-<tr><td>wrong_lang</td><td>ES</td><td>6</td></tr>
-<tr><td>boundary_error</td><td>FR</td><td>19</td></tr>
-<tr><td>wrong_lang</td><td>FR</td><td>12</td></tr>
-<tr><td>boundary_error</td><td>ID</td><td>15</td></tr>
-<tr><td>wrong_lang</td><td>ID</td><td>5</td></tr>
-<tr><td>wrong_lang</td><td>IT</td><td>9</td></tr>
-<tr><td>boundary_error</td><td>IT</td><td>16</td></tr>
-<tr><td>wrong_lang</td><td>JA</td><td>16</td></tr>
-<tr><td>boundary_error</td><td>JA</td><td>6</td></tr>
-<tr><td>wrong_lang</td><td>NL</td><td>6</td></tr>
-<tr><td>boundary_error</td><td>NL</td><td>9</td></tr>
-<tr><td>boundary_error</td><td>PL</td><td>19</td></tr>
-<tr><td>wrong_lang</td><td>PL</td><td>5</td></tr>
-<tr><td>wrong_lang</td><td>PT</td><td>9</td></tr>
-<tr><td>boundary_error</td><td>PT</td><td>20</td></tr>
-<tr><td>boundary_error</td><td>TR</td><td>21</td></tr>
-<tr><td>wrong_lang</td><td>TR</td><td>2</td></tr>
-<tr><td>wrong_lang</td><td>UR</td><td>7</td></tr>
-<tr><td>boundary_error</td><td>UR</td><td>3</td></tr>
-<tr><td>boundary_error</td><td>VI</td><td>30</td></tr>
-<tr><td>wrong_lang</td><td>VI</td><td>1</td></tr>
-<tr><td>wrong_lang</td><td>ZH</td><td>17</td></tr>
-<tr><td>boundary_error</td><td>ZH</td><td>9</td></tr>
+<tr><td>wrong_lang</td><td>AR</td><td>5</td></tr>
+<tr><td>boundary_error</td><td>AR</td><td>5</td></tr>
+<tr><td>wrong_lang</td><td>DE</td><td>10</td></tr>
+<tr><td>boundary_error</td><td>DE</td><td>36</td></tr>
+<tr><td>similar_lang</td><td>DE</td><td>4</td></tr>
+<tr><td>boundary_error</td><td>EN</td><td>34</td></tr>
+<tr><td>wrong_lang</td><td>EN</td><td>7</td></tr>
+<tr><td>similar_lang</td><td>EN</td><td>2</td></tr>
+<tr><td>boundary_error</td><td>ES</td><td>40</td></tr>
+<tr><td>similar_lang</td><td>ES</td><td>9</td></tr>
+<tr><td>wrong_lang</td><td>ES</td><td>1</td></tr>
+<tr><td>boundary_error</td><td>FR</td><td>47</td></tr>
+<tr><td>wrong_lang</td><td>FR</td><td>4</td></tr>
+<tr><td>boundary_error</td><td>ID</td><td>33</td></tr>
+<tr><td>wrong_lang</td><td>ID</td><td>16</td></tr>
+<tr><td>wrong_lang</td><td>IT</td><td>5</td></tr>
+<tr><td>similar_lang</td><td>IT</td><td>14</td></tr>
+<tr><td>boundary_error</td><td>IT</td><td>41</td></tr>
+<tr><td>wrong_lang</td><td>JA</td><td>34</td></tr>
+<tr><td>boundary_error</td><td>JA</td><td>17</td></tr>
+<tr><td>wrong_lang</td><td>NL</td><td>10</td></tr>
+<tr><td>similar_lang</td><td>NL</td><td>2</td></tr>
+<tr><td>boundary_error</td><td>NL</td><td>31</td></tr>
+<tr><td>boundary_error</td><td>PL</td><td>32</td></tr>
+<tr><td>wrong_lang</td><td>PL</td><td>12</td></tr>
+<tr><td>wrong_lang</td><td>PT</td><td>3</td></tr>
+<tr><td>similar_lang</td><td>PT</td><td>9</td></tr>
+<tr><td>boundary_error</td><td>PT</td><td>50</td></tr>
+<tr><td>boundary_error</td><td>TR</td><td>40</td></tr>
+<tr><td>wrong_lang</td><td>TR</td><td>12</td></tr>
+<tr><td>wrong_lang</td><td>UR</td><td>39</td></tr>
+<tr><td>boundary_error</td><td>UR</td><td>5</td></tr>
+<tr><td>boundary_error</td><td>VI</td><td>48</td></tr>
+<tr><td>wrong_lang</td><td>VI</td><td>15</td></tr>
+<tr><td>wrong_lang</td><td>ZH</td><td>33</td></tr>
+<tr><td>boundary_error</td><td>ZH</td><td>20</td></tr>
 </table>
 </section>
 <section><h2>Error Examples</h2>
@@ -202,112 +230,151 @@ pre { background: #f8f8f8; border-radius: 4px; padding: 8px;}
 <div id="WrongLang" class="tabcontent">
 <h3>Top 100 wrong language errors</h3>
 <table><tr><th>Sentence</th><th>Gold</th><th>Pred</th><th>Token</th></tr>
-<tr><td>colectivo fascinating мудрость harmonioso ความไว้วางใจ आध्यात्मिक Nationalismus 时代精神</td><td>pt</td><td>tr</td><td>harmonioso</td></tr>
-<tr><td>colectivo fascinating мудрость harmonioso ความไว้วางใจ आध्यात्मिक Nationalismus 时代精神</td><td>de</td><td>tr</td><td>nationalismus</td></tr>
+<tr><td>colectivo fascinating мудрость harmonioso ความไว้วางใจ आध्यात्मिक Nationalismus 时代精神</td><td>pt</td><td>en</td><td>harmonioso</td></tr>
+<tr><td>colectivo fascinating мудрость harmonioso ความไว้วางใจ आध्यात्मिक Nationalismus 时代精神</td><td>de</td><td>fr</td><td>nationalismus</td></tr>
 <tr><td>colectivo fascinating мудрость harmonioso ความไว้วางใจ आध्यात्मिक Nationalismus 时代精神</td><td>zh</td><td>unknown</td><td>时代精神</td></tr>
-<tr><td>sublime تقليد uluslararası teknologi сознание</td><td>en</td><td>tr</td><td>sublime</td></tr>
-<tr><td>sublime تقليد uluslararası teknologi сознание</td><td>ar</td><td>ur</td><td>تقليد</td></tr>
+<tr><td>sublime تقليد uluslararası teknologi сознание</td><td>en</td><td>fr</td><td>sublime</td></tr>
 <tr><td>다문화 hạnh phúc historia 唯物論 ब्लॉकचेन опыт multiculturel internasional</td><td>ja</td><td>unknown</td><td>唯物論</td></tr>
 <tr><td>глобализация नैतिक معرفة futuro</td><td>ar</td><td>ur</td><td>معرفة</td></tr>
-<tr><td>глобализация नैतिक معرفة futuro</td><td>pt</td><td>tr</td><td>futuro</td></tr>
 <tr><td>pensiero 構造的 창조적 contemporain</td><td>it</td><td>id</td><td>pensiero</td></tr>
 <tr><td>pensiero 構造的 창조적 contemporain</td><td>ja</td><td>unknown</td><td>構造的</td></tr>
-<tr><td>pensiero 構造的 창조적 contemporain</td><td>fr</td><td>tr</td><td>contemporain</td></tr>
-<tr><td>Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体</td><td>it</td><td>tr</td><td>creativo</td></tr>
 <tr><td>Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体</td><td>zh</td><td>unknown</td><td>构建人类命运共同体</td></tr>
-<tr><td>bền vững serendipitous energía качество kualitas</td><td>id</td><td>tr</td><td>kualitas</td></tr>
+<tr><td>bền vững serendipitous energía качество kualitas</td><td>id</td><td>fr</td><td>kualitas</td></tr>
 <tr><td>تخلیق ชุมชน প্রযুক্তিগত</td><td>ur</td><td>ar</td><td>تخلیق</td></tr>
-<tr><td>creativo nghiên cứu إنترنت философия</td><td>ar</td><td>ur</td><td>إنترنت</td></tr>
+<tr><td>pensiero sesquipedalian salud Internet رجحان</td><td>ur</td><td>ar</td><td>رجحان</td></tr>
 <tr><td>فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma</td><td>ur</td><td>ar</td><td>فلسفہ</td></tr>
 <tr><td>فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma</td><td>ja</td><td>unknown</td><td>知識</td></tr>
-<tr><td>فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma</td><td>de</td><td>tr</td><td>spiritualität</td></tr>
+<tr><td>فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma</td><td>de</td><td>fr</td><td>spiritualität</td></tr>
 <tr><td>فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma</td><td>zh</td><td>unknown</td><td>历史唯物主义</td></tr>
 <tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>ja</td><td>unknown</td><td>経済</td></tr>
-<tr><td>fenômeno সাহিত্য innowacja</td><td>pt</td><td>tr</td><td>fenômeno</td></tr>
-<tr><td>fenômeno সাহিত্য innowacja</td><td>pl</td><td>tr</td><td>innowacja</td></tr>
+<tr><td>fenômeno সাহিত্য innowacja</td><td>pl</td><td>fr</td><td>innowacja</td></tr>
 <tr><td>giá trị luận verde 全球化 discombobulated वैश्विकीकरण 생태학</td><td>zh</td><td>unknown</td><td>全球化</td></tr>
-<tr><td>medeniyet tin tưởng educazione amour সমষ্টিগত</td><td>tr</td><td>id</td><td>medeniyet</td></tr>
 <tr><td>智慧 ความคิด राष्ट्रीय مهارة</td><td>zh</td><td>unknown</td><td>智慧</td></tr>
 <tr><td>智慧 ความคิด राष्ट्रीय مهارة</td><td>ar</td><td>ur</td><td>مهارة</td></tr>
+<tr><td>nationaal रचनात्मक varoluş</td><td>nl</td><td>fr</td><td>nationaal</td></tr>
+<tr><td>nationaal रचनात्मक varoluş</td><td>tr</td><td>fr</td><td>varoluş</td></tr>
 <tr><td>felicidade марксистский 国家 matérialisme اجتماعی</td><td>ja</td><td>unknown</td><td>国家</td></tr>
-<tr><td>felicidade марксистский 国家 matérialisme اجتماعی</td><td>fr</td><td>tr</td><td>matérialisme</td></tr>
 <tr><td>felicidade марксистский 国家 matérialisme اجتماعی</td><td>ur</td><td>ar</td><td>اجتماعی</td></tr>
-<tr><td>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</td><td>nl</td><td>tr</td><td>kwaliteit</td></tr>
-<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>ar</td><td>ur</td><td>مجتمع</td></tr>
-<tr><td>eğitim nationalisme biotecnologia قيمية มีค่า 의식 মূল্যতত্ত্ব</td><td>ar</td><td>ur</td><td>قيمية</td></tr>
-<tr><td>영적 modern اختراع patrimônio</td><td>de</td><td>tr</td><td>modern</td></tr>
-<tr><td>영적 modern اختراع patrimônio</td><td>pt</td><td>tr</td><td>patrimônio</td></tr>
+<tr><td>영적 modern اختراع patrimônio</td><td>de</td><td>fr</td><td>modern</td></tr>
+<tr><td>영적 modern اختراع patrimônio</td><td>ur</td><td>ar</td><td>اختراع</td></tr>
 <tr><td>การแสดงออก 表現 hy vọng eksistensi floccinaucinihilipilification</td><td>ja</td><td>unknown</td><td>表現</td></tr>
-<tr><td>ชุมชน estructural 幸福 দর্শন инновация deoxyribonucleic traditionell</td><td>es</td><td>tr</td><td>estructural</td></tr>
 <tr><td>ชุมชน estructural 幸福 দর্শন инновация deoxyribonucleic traditionell</td><td>ja</td><td>unknown</td><td>幸福</td></tr>
-<tr><td>fenómeno مثالی ประดิษฐ์ światopogląd dilbilim روحانية জ্ঞান zeitgenössisch</td><td>es</td><td>tr</td><td>fenómeno</td></tr>
-<tr><td>fenómeno مثالی ประดิษฐ์ światopogląd dilbilim روحانية জ্ঞান zeitgenössisch</td><td>ar</td><td>ur</td><td>روحانية</td></tr>
-<tr><td>rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio</td><td>id</td><td>tr</td><td>rantai</td></tr>
-<tr><td>rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio</td><td>pt</td><td>tr</td><td>patrimônio</td></tr>
-<tr><td>internet インターネット estética mégadonnées multifaceted 스타일</td><td>it</td><td>tr</td><td>internet</td></tr>
-<tr><td>énergie 신뢰 ความคิดสร้างสรรค์ pembangunan szczęście اخلاقی</td><td>fr</td><td>tr</td><td>énergie</td></tr>
+<tr><td>fenómeno مثالی ประดิษฐ์ światopogląd dilbilim روحانية জ্ঞান zeitgenössisch</td><td>ur</td><td>ar</td><td>مثالی</td></tr>
+<tr><td>rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio</td><td>id</td><td>fr</td><td>rantai</td></tr>
 <tr><td>énergie 신뢰 ความคิดสร้างสรรค์ pembangunan szczęście اخلاقی</td><td>ur</td><td>ar</td><td>اخلاقی</td></tr>
-<tr><td>혁명 mentalité chính trị euphoria</td><td>fr</td><td>id</td><td>mentalité</td></tr>
 <tr><td>传统文化 глобализация デジタル tradisi</td><td>zh</td><td>unknown</td><td>传统文化</td></tr>
-<tr><td>传统文化 глобализация デジタル tradisi</td><td>id</td><td>tr</td><td>tradisi</td></tr>
-<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>zh</td><td>unknown</td><td>心理状态</td></tr>
-<tr><td>ментальность Revolution عولمة valioso kỹ năng humanitaire</td><td>ar</td><td>ur</td><td>عولمة</td></tr>
-<tr><td>inteligencia اختراع modern 政治</td><td>es</td><td>tr</td><td>inteligencia</td></tr>
-<tr><td>inteligencia اختراع modern 政治</td><td>nl</td><td>tr</td><td>modern</td></tr>
+<tr><td>传统文化 глобализация デジタル tradisi</td><td>id</td><td>fr</td><td>tradisi</td></tr>
+<tr><td>ментальность Revolution عولمة valioso kỹ năng humanitaire</td><td>de</td><td>fr</td><td>revolution</td></tr>
+<tr><td>inteligencia اختراع modern 政治</td><td>ur</td><td>ar</td><td>اختراع</td></tr>
+<tr><td>inteligencia اختراع modern 政治</td><td>nl</td><td>fr</td><td>modern</td></tr>
 <tr><td>inteligencia اختراع modern 政治</td><td>zh</td><td>unknown</td><td>政治</td></tr>
-<tr><td>comunitario miras kollektiv 인본주의 existence আধুনিক</td><td>fr</td><td>tr</td><td>existence</td></tr>
-<tr><td>संरचनात्मक глобализация 녹색 cosmovisão</td><td>pt</td><td>tr</td><td>cosmovisão</td></tr>
-<tr><td>morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe</td><td>it</td><td>tr</td><td>morale</td></tr>
-<tr><td>morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe</td><td>en</td><td>tr</td><td>ethereal</td></tr>
-<tr><td>morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe</td><td>es</td><td>tr</td><td>patrimonio</td></tr>
-<tr><td>morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe</td><td>de</td><td>tr</td><td>erbe</td></tr>
-<tr><td>patrimonio internet أدب কোয়ান্টাম ความรู้</td><td>ar</td><td>ur</td><td>أدب</td></tr>
-<tr><td>سبز innovazione innowacja 이상주의 musik सांस्कृतिक experience</td><td>id</td><td>tr</td><td>musik</td></tr>
-<tr><td>سبز innovazione innowacja 이상주의 musik सांस्कृतिक experience</td><td>en</td><td>tr</td><td>experience</td></tr>
-<tr><td>اظہار kunstmatige 유산 सामूहिक</td><td>nl</td><td>tr</td><td>kunstmatige</td></tr>
-<tr><td>technologie творческий humanisme जीवन</td><td>fr</td><td>tr</td><td>technologie</td></tr>
-<tr><td>technologie творческий humanisme जीवन</td><td>nl</td><td>tr</td><td>humanisme</td></tr>
-<tr><td>美しさ вычисления การแสดงออก storia 양자</td><td>it</td><td>tr</td><td>storia</td></tr>
+<tr><td>comunitario miras kollektiv 인본주의 existence আধুনিক</td><td>fr</td><td>en</td><td>existence</td></tr>
+<tr><td>morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe</td><td>it</td><td>en</td><td>morale</td></tr>
+<tr><td>morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe</td><td>en</td><td>fr</td><td>ethereal</td></tr>
+<tr><td>سبز innovazione innowacja 이상주의 musik सांस्कृतिक experience</td><td>ur</td><td>ar</td><td>سبز</td></tr>
+<tr><td>سبز innovazione innowacja 이상주의 musik सांस्कृतिक experience</td><td>id</td><td>fr</td><td>musik</td></tr>
+<tr><td>سبز innovazione innowacja 이상주의 musik सांस्कृतिक experience</td><td>en</td><td>fr</td><td>experience</td></tr>
+<tr><td>مثالی historia 创新思维 digital দক্ষতা kesadaran</td><td>ur</td><td>ar</td><td>مثالی</td></tr>
+<tr><td>مثالی historia 创新思维 digital দক্ষতা kesadaran</td><td>pl</td><td>fr</td><td>historia</td></tr>
+<tr><td>مثالی historia 创新思维 digital দক্ষতা kesadaran</td><td>zh</td><td>unknown</td><td>创新思维</td></tr>
+<tr><td>مثالی historia 创新思维 digital দক্ষতা kesadaran</td><td>es</td><td>en</td><td>digital</td></tr>
+<tr><td>مثالی historia 创新思维 digital দক্ষতা kesadaran</td><td>id</td><td>en</td><td>kesadaran</td></tr>
+<tr><td>اظہار kunstmatige 유산 सामूहिक</td><td>ur</td><td>ar</td><td>اظہار</td></tr>
+<tr><td>اظہار kunstmatige 유산 सामूहिक</td><td>nl</td><td>fr</td><td>kunstmatige</td></tr>
+<tr><td>technologie творческий humanisme जीवन</td><td>fr</td><td>en</td><td>technologie</td></tr>
+<tr><td>technologie творческий humanisme जीवन</td><td>nl</td><td>fr</td><td>humanisme</td></tr>
 <tr><td>doświadczenie enchanting гармоничный 中华民族伟大复兴 حديث valores hiện đại hóa</td><td>zh</td><td>unknown</td><td>中华民族伟大复兴</td></tr>
-<tr><td>tradizionale معلومات 量子 人工智能 인본주의 มรดก</td><td>it</td><td>tr</td><td>tradizionale</td></tr>
+<tr><td>tradizionale معلومات 量子 人工智能 인본주의 มรดก</td><td>ur</td><td>ar</td><td>معلومات</td></tr>
 <tr><td>Literatur idealista 정신력 供给侧结构性改革 বৃহৎতথ্য confiance политика</td><td>zh</td><td>unknown</td><td>供给侧结构性改革</td></tr>
-<tr><td>Literatur idealista 정신력 供给侧结构性改革 বৃহৎতথ্য confiance политика</td><td>fr</td><td>tr</td><td>confiance</td></tr>
-<tr><td>наследие kalite metodologia di sản biotecnologia กลมกลืน spiritualiteit</td><td>nl</td><td>tr</td><td>spiritualiteit</td></tr>
-<tr><td>zdrowie チェーン moral yapay</td><td>pl</td><td>tr</td><td>zdrowie</td></tr>
-<tr><td>modernizzazione 生物技术 épistémologie นิเวศวิทยา</td><td>zh</td><td>unknown</td><td>生物技术</td></tr>
-<tr><td>modernizzazione 生物技术 épistémologie นิเวศวิทยา</td><td>fr</td><td>tr</td><td>épistémologie</td></tr>
+<tr><td>Literatur idealista 정신력 供给侧结构性改革 বৃহৎতথ্য confiance политика</td><td>fr</td><td>en</td><td>confiance</td></tr>
+<tr><td>наследие kalite metodologia di sản biotecnologia กลมกลืน spiritualiteit</td><td>tr</td><td>de</td><td>kalite</td></tr>
+<tr><td>بین الاقوامی szczęście ecologico biotechnologie 가치있는</td><td>ur</td><td>ar</td><td>بینالاقوامی</td></tr>
+<tr><td>zdrowie チェーン moral yapay</td><td>pl</td><td>fr</td><td>zdrowie</td></tr>
+<tr><td>tư duy 文学 komputasi natura 大数据</td><td>vi</td><td>fr</td><td>tưduy</td></tr>
+<tr><td>tư duy 文学 komputasi natura 大数据</td><td>ja</td><td>unknown</td><td>文学</td></tr>
 <tr><td>tư duy 文学 komputasi natura 大数据</td><td>zh</td><td>unknown</td><td>大数据</td></tr>
-<tr><td>compétence tecnológica เขียว metodoloji مسؤولية रचनात्मक</td><td>tr</td><td>id</td><td>metodoloji</td></tr>
+<tr><td>compétence tecnológica เขียว metodoloji مسؤولية रचनात्मक</td><td>tr</td><td>fr</td><td>metodoloji</td></tr>
 <tr><td>compétence tecnológica เขียว metodoloji مسؤولية रचनात्मक</td><td>ar</td><td>ur</td><td>مسؤولية</td></tr>
-<tr><td>pristine 생태학 فلسفہ تقنية भावनात्मक internacional มีค่า quý giá</td><td>en</td><td>tr</td><td>pristine</td></tr>
-<tr><td>pristine 생태학 فلسفہ تقنية भावनात्मक internacional มีค่า quý giá</td><td>pt</td><td>tr</td><td>internacional</td></tr>
-<tr><td>pristine 생태학 فلسفہ تقنية भावनात्मक internacional มีค่า quý giá</td><td>vi</td><td>tr</td><td>quýgiá</td></tr>
+<tr><td>pristine 생태학 فلسفہ تقنية भावनात्मक internacional มีค่า quý giá</td><td>en</td><td>fr</td><td>pristine</td></tr>
+<tr><td>pristine 생태학 فلسفہ تقنية भावनात्मक internacional มีค่า quý giá</td><td>vi</td><td>fr</td><td>quýgiá</td></tr>
 <tr><td>технологический pusillanimous 工匠精神 felicità ذہانت 現象</td><td>ur</td><td>ar</td><td>ذہانت</td></tr>
 <tr><td>технологический pusillanimous 工匠精神 felicità ذہانت 現象</td><td>ja</td><td>unknown</td><td>現象</td></tr>
-<tr><td>literatura 信息时代 رجحان 에너지 jakość kinh nghiệm تراث Entwicklung</td><td>es</td><td>tr</td><td>literatura</td></tr>
 <tr><td>literatura 信息时代 رجحان 에너지 jakość kinh nghiệm تراث Entwicklung</td><td>zh</td><td>unknown</td><td>信息时代</td></tr>
 <tr><td>literatura 信息时代 رجحان 에너지 jakość kinh nghiệm تراث Entwicklung</td><td>ur</td><td>ar</td><td>رجحان</td></tr>
-<tr><td>aksiologi computación 정보 कंप्यूटिंग tradition</td><td>fr</td><td>en</td><td>tradition</td></tr>
-<tr><td>exquisite глобализация phục hưng conocimiento 인도주의 هيكلي</td><td>en</td><td>tr</td><td>exquisite</td></tr>
-<tr><td>exquisite глобализация phục hưng conocimiento 인도주의 هيكلي</td><td>ar</td><td>ur</td><td>هيكلي</td></tr>
 <tr><td>stijl consciência हरित 사고 طریقہ کار</td><td>ur</td><td>ar</td><td>طریقہکار</td></tr>
 <tr><td>patrimonio Biotechnologie chủ nghĩa duy vật odpowiedzialność 心理状态</td><td>zh</td><td>unknown</td><td>心理状态</td></tr>
-<tr><td>perspective Politik significado lingkungan</td><td>en</td><td>id</td><td>perspective</td></tr>
-<tr><td>วิภาษวิธี materiały calidad 도덕적 dialético</td><td>pt</td><td>tr</td><td>dialético</td></tr>
 <tr><td>近代化 yenilik habilidad fiducia 개혁주의 构建人类命运共同体</td><td>ja</td><td>unknown</td><td>近代化</td></tr>
 <tr><td>近代化 yenilik habilidad fiducia 개혁주의 构建人类命运共同体</td><td>zh</td><td>unknown</td><td>构建人类命运共同体</td></tr>
 <tr><td>生态环境 اقدار zaufanie Glück conocimiento công nghệ sinh học ответственность responsabilità</td><td>zh</td><td>unknown</td><td>生态环境</td></tr>
-<tr><td>生态环境 اقدار zaufanie Glück conocimiento công nghệ sinh học ответственность responsabilità</td><td>it</td><td>tr</td><td>responsabilità</td></tr>
-<tr><td>harmonious эстетика revolutie ابتكار humanitarny Materialismus 哲学</td><td>en</td><td>tr</td><td>harmonious</td></tr>
-<tr><td>harmonious эстетика revolutie ابتكار humanitarny Materialismus 哲学</td><td>nl</td><td>tr</td><td>revolutie</td></tr>
-<tr><td>harmonious эстетика revolutie ابتكار humanitarny Materialismus 哲学</td><td>ar</td><td>ur</td><td>ابتكار</td></tr>
+<tr><td>生态环境 اقدار zaufanie Glück conocimiento công nghệ sinh học ответственность responsabilità</td><td>ur</td><td>ar</td><td>اقدار</td></tr>
+<tr><td>harmonious эстетика revolutie ابتكار humanitarny Materialismus 哲学</td><td>nl</td><td>fr</td><td>revolutie</td></tr>
 <tr><td>harmonious эстетика revolutie ابتكار humanitarny Materialismus 哲学</td><td>ja</td><td>unknown</td><td>哲学</td></tr>
+<tr><td>internet 기술적 keindahan إنساني Weisheit moral</td><td>tr</td><td>en</td><td>internet</td></tr>
+<tr><td>internet 기술적 keindahan إنساني Weisheit moral</td><td>id</td><td>fr</td><td>keindahan</td></tr>
+<tr><td>internazionale 문학 yaratıcı идеалистический চিন্তাভাবনা 技能</td><td>tr</td><td>fr</td><td>yaratıcı</td></tr>
+<tr><td>internazionale 문학 yaratıcı идеалистический চিন্তাভাবনা 技能</td><td>ja</td><td>unknown</td><td>技能</td></tr>
+<tr><td>transcendentalism অভিজ্ঞতা طرز</td><td>ur</td><td>ar</td><td>طرز</td></tr>
+<tr><td>material ذكاء 가치론</td><td>id</td><td>fr</td><td>material</td></tr>
+<tr><td>nowoczesny 創造性 ธรรมชาติ ऐतिहासिक renaissance ahlaki</td><td>pl</td><td>en</td><td>nowoczesny</td></tr>
+<tr><td>nowoczesny 創造性 ธรรมชาติ ऐतिहासिक renaissance ahlaki</td><td>ja</td><td>unknown</td><td>創造性</td></tr>
+<tr><td>عصری बुद्धिमत्ता humanizm การปฏิวัติ 伝統的</td><td>pl</td><td>fr</td><td>humanizm</td></tr>
+<tr><td>عصری बुद्धिमत्ता humanizm การปฏิวัติ 伝統的</td><td>ja</td><td>unknown</td><td>伝統的</td></tr>
+<tr><td>modernizzazione วัตถุนิยม esthétique 环境 품질 kreatywność 文学</td><td>zh</td><td>unknown</td><td>环境</td></tr>
+<tr><td>modernizzazione วัตถุนิยม esthétique 环境 품질 kreatywność 文学</td><td>pl</td><td>fr</td><td>kreatywność</td></tr>
+<tr><td>modernizzazione วัตถุนิยม esthétique 环境 품질 kreatywność 文学</td><td>ja</td><td>unknown</td><td>文学</td></tr>
+<tr><td>ekonomi eksistensi 新材料 rozwój समकालीन دولي</td><td>ar</td><td>ur</td><td>دولي</td></tr>
+<tr><td>現代 artificielle बुद्धिमत्ता مواد verantwoordelijkheid</td><td>ja</td><td>unknown</td><td>現代</td></tr>
+<tr><td>uyumlu ปรากฏการณ์ Literatur antediluvian tin tưởng énergie आदर्शवादी futuro</td><td>tr</td><td>fr</td><td>uyumlu</td></tr>
+<tr><td>chaîne コンピューティング digitaal سعادة ยั่งยืน gelecek Humanismus</td><td>nl</td><td>fr</td><td>digitaal</td></tr>
+<tr><td>triết học nacional انسانیت internet</td><td>ur</td><td>ar</td><td>انسانیت</td></tr>
+<tr><td>การแสดงออก gezondheid yapısal بيانات জৈবপ্রযুক্তি 伝統</td><td>ja</td><td>unknown</td><td>伝統</td></tr>
+<tr><td>structurel tecnologico 스타일 pusillanimous सभ्यता มนุษยธรรม humanisme salud</td><td>en</td><td>fr</td><td>pusillanimous</td></tr>
+<tr><td>新时代中国特色社会主义思想 精神的 Zukunft современный ethereal أخلاقي</td><td>en</td><td>fr</td><td>ethereal</td></tr>
 </table>
 </div>
 <div id="SimilarLang" class="tabcontent">
 <h3>Top 100 similar language errors</h3>
 <table><tr><th>Sentence</th><th>Gold</th><th>Pred</th><th>Token</th></tr>
-<tr><td>ментальность Revolution عولمة valioso kỹ năng humanitaire</td><td>de</td><td>en</td><td>revolution</td></tr>
+<tr><td>глобализация नैतिक معرفة futuro</td><td>pt</td><td>fr</td><td>futuro</td></tr>
+<tr><td>Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体</td><td>it</td><td>fr</td><td>creativo</td></tr>
+<tr><td>fenômeno সাহিত্য innowacja</td><td>pt</td><td>fr</td><td>fenômeno</td></tr>
+<tr><td>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</td><td>nl</td><td>en</td><td>kwaliteit</td></tr>
+<tr><td>영적 modern اختراع patrimônio</td><td>pt</td><td>fr</td><td>patrimônio</td></tr>
+<tr><td>ชุมชน estructural 幸福 দর্শন инновация deoxyribonucleic traditionell</td><td>es</td><td>fr</td><td>estructural</td></tr>
+<tr><td>fenómeno مثالی ประดิษฐ์ światopogląd dilbilim روحانية জ্ঞান zeitgenössisch</td><td>es</td><td>fr</td><td>fenómeno</td></tr>
+<tr><td>rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio</td><td>pt</td><td>fr</td><td>patrimônio</td></tr>
+<tr><td>internet インターネット estética mégadonnées multifaceted 스타일</td><td>it</td><td>fr</td><td>internet</td></tr>
+<tr><td>inteligencia اختراع modern 政治</td><td>es</td><td>fr</td><td>inteligencia</td></tr>
+<tr><td>संरचनात्मक глобализация 녹색 cosmovisão</td><td>pt</td><td>fr</td><td>cosmovisão</td></tr>
+<tr><td>morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe</td><td>es</td><td>fr</td><td>patrimonio</td></tr>
+<tr><td>morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe</td><td>de</td><td>en</td><td>erbe</td></tr>
+<tr><td>美しさ вычисления การแสดงออก storia 양자</td><td>it</td><td>fr</td><td>storia</td></tr>
+<tr><td>tradizionale معلومات 量子 人工智能 인본주의 มรดก</td><td>it</td><td>fr</td><td>tradizionale</td></tr>
+<tr><td>pristine 생태학 فلسفہ تقنية भावनात्मक internacional มีค่า quý giá</td><td>pt</td><td>fr</td><td>internacional</td></tr>
+<tr><td>literatura 信息时代 رجحان 에너지 jakość kinh nghiệm تراث Entwicklung</td><td>es</td><td>fr</td><td>literatura</td></tr>
+<tr><td>วิภาษวิธี materiały calidad 도덕적 dialético</td><td>pt</td><td>es</td><td>dialético</td></tr>
+<tr><td>生态环境 اقدار zaufanie Glück conocimiento công nghệ sinh học ответственность responsabilità</td><td>it</td><td>fr</td><td>responsabilità</td></tr>
+<tr><td>internazionale 문학 yaratıcı идеалистический চিন্তাভাবনা 技能</td><td>it</td><td>fr</td><td>internazionale</td></tr>
+<tr><td>transcendentalism অভিজ্ঞতা طرز</td><td>en</td><td>de</td><td>transcendentalism</td></tr>
+<tr><td>modernizzazione วัตถุนิยม esthétique 环境 품질 kreatywność 文学</td><td>it</td><td>fr</td><td>modernizzazione</td></tr>
+<tr><td>uyumlu ปรากฏการณ์ Literatur antediluvian tin tưởng énergie आदर्शवादी futuro</td><td>es</td><td>fr</td><td>futuro</td></tr>
+<tr><td>triết học nacional انسانیت internet</td><td>it</td><td>fr</td><td>internet</td></tr>
+<tr><td>新时代中国特色社会主义思想 精神的 Zukunft современный ethereal أخلاقي</td><td>de</td><td>en</td><td>zukunft</td></tr>
+<tr><td>환경 cultura ثقافة modernisation</td><td>it</td><td>fr</td><td>cultura</td></tr>
+<tr><td>samenleving 국가 音乐 multiculturel</td><td>nl</td><td>en</td><td>samenleving</td></tr>
+<tr><td>явление 인본주의 অস্তিত্ব روایت biotecnologia</td><td>it</td><td>fr</td><td>biotecnologia</td></tr>
+<tr><td>nostalgic di sản اشتراكية ahlaki</td><td>en</td><td>de</td><td>nostalgic</td></tr>
+<tr><td>مستقبل renacimiento vertrouwen Internet moral internet कुशलता materialismo</td><td>it</td><td>fr</td><td>materialismo</td></tr>
+<tr><td>coscienza традиционный 文化 अस्तित्व materiały 예술 nationaal</td><td>it</td><td>fr</td><td>coscienza</td></tr>
+<tr><td>dijital 희망 humanismo グローバル化 ثقافة अस्तित्व materialisme</td><td>pt</td><td>fr</td><td>humanismo</td></tr>
+<tr><td>کثیر الثقافتی harmonijny कुशलता mondialisation hijau 理想信念 materiales โครงสร้าง</td><td>es</td><td>fr</td><td>materiales</td></tr>
+<tr><td>sostenibile بین الاقوامی développement عولمة</td><td>it</td><td>fr</td><td>sostenibile</td></tr>
+<tr><td>유물론 стиль Axiologie</td><td>de</td><td>en</td><td>axiologie</td></tr>
+<tr><td>पारंपरिक 근대화 Phänomen groen エネルギー civilización পরিবেশ sztuka</td><td>es</td><td>fr</td><td>civilización</td></tr>
+<tr><td>جمال riformismo नैतिक transcendentalism ý nghĩa มนุษยธรรม compétence tradición</td><td>it</td><td>fr</td><td>riformismo</td></tr>
+<tr><td>工匠精神 linguística आदर्शवादी epistemoloji</td><td>pt</td><td>fr</td><td>linguística</td></tr>
+<tr><td>Linguistik মূল্যতত্ত্ব مہارت</td><td>de</td><td>en</td><td>linguistik</td></tr>
+<tr><td>civilización পদ্ধতিতত্ত্ব วัตถุนิยม história kalite</td><td>es</td><td>fr</td><td>civilización</td></tr>
 </table>
 </div>
 <div id="Boundary" class="tabcontent">
@@ -315,104 +382,104 @@ pre { background: #f8f8f8; border-radius: 4px; padding: 8px;}
 <table><tr><th>Sentence</th><th>Gold</th><th>Pred</th><th>Token</th></tr>
 <tr><td>colectivo fascinating мудрость harmonioso ความไว้วางใจ आध्यात्मिक Nationalismus 时代精神</td><td>es</td><td>en</td><td>colectivo</td></tr>
 <tr><td>colectivo fascinating мудрость harmonioso ความไว้วางใจ आध्यात्मिक Nationalismus 时代精神</td><td>en</td><td>en</td><td>fascinating</td></tr>
-<tr><td>sublime تقليد uluslararası teknologi сознание</td><td>tr</td><td>tr</td><td>uluslararası</td></tr>
-<tr><td>sublime تقليد uluslararası teknologi сознание</td><td>id</td><td>tr</td><td>teknologi</td></tr>
-<tr><td>다문화 hạnh phúc historia 唯物論 ब्लॉकचेन опыт multiculturel internasional</td><td>vi</td><td>pt</td><td>hạnhphúc</td></tr>
-<tr><td>다문화 hạnh phúc historia 唯物論 ब्लॉकचेन опыт multiculturel internasional</td><td>es</td><td>pt</td><td>historia</td></tr>
-<tr><td>다문화 hạnh phúc historia 唯物論 ब्लॉकचेन опыт multiculturel internasional</td><td>fr</td><td>tr</td><td>multiculturel</td></tr>
-<tr><td>다문화 hạnh phúc historia 唯物論 ब्लॉकचेन опыт multiculturel internasional</td><td>id</td><td>tr</td><td>internasional</td></tr>
-<tr><td>inovação 民族精神 modernisasi</td><td>pt</td><td>tr</td><td>inovação</td></tr>
-<tr><td>inovação 民族精神 modernisasi</td><td>zh</td><td>tr</td><td>民族精神</td></tr>
-<tr><td>inovação 民族精神 modernisasi</td><td>id</td><td>tr</td><td>modernisasi</td></tr>
-<tr><td>Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体</td><td>de</td><td>tr</td><td>biotechnologie</td></tr>
-<tr><td>Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体</td><td>pt</td><td>tr</td><td>humanitário</td></tr>
-<tr><td>Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体</td><td>fr</td><td>tr</td><td>spirituel</td></tr>
-<tr><td>bền vững serendipitous energía качество kualitas</td><td>vi</td><td>id</td><td>bềnvững</td></tr>
-<tr><td>bền vững serendipitous energía качество kualitas</td><td>en</td><td>id</td><td>serendipitous</td></tr>
-<tr><td>bền vững serendipitous energía качество kualitas</td><td>es</td><td>id</td><td>energía</td></tr>
+<tr><td>sublime تقليد uluslararası teknologi сознание</td><td>tr</td><td>fr</td><td>uluslararası</td></tr>
+<tr><td>sublime تقليد uluslararası teknologi сознание</td><td>id</td><td>fr</td><td>teknologi</td></tr>
+<tr><td>다문화 hạnh phúc historia 唯物論 ब्लॉकचेन опыт multiculturel internasional</td><td>vi</td><td>fr</td><td>hạnhphúc</td></tr>
+<tr><td>다문화 hạnh phúc historia 唯物論 ब्लॉकचेन опыт multiculturel internasional</td><td>es</td><td>fr</td><td>historia</td></tr>
+<tr><td>다문화 hạnh phúc historia 唯物論 ब्लॉकचेन опыт multiculturel internasional</td><td>fr</td><td>fr</td><td>multiculturel</td></tr>
+<tr><td>다문화 hạnh phúc historia 唯物論 ब्लॉकचेन опыт multiculturel internasional</td><td>id</td><td>fr</td><td>internasional</td></tr>
+<tr><td>inovação 民族精神 modernisasi</td><td>pt</td><td>fr</td><td>inovação</td></tr>
+<tr><td>inovação 民族精神 modernisasi</td><td>zh</td><td>fr</td><td>民族精神</td></tr>
+<tr><td>inovação 民族精神 modernisasi</td><td>id</td><td>fr</td><td>modernisasi</td></tr>
+<tr><td>Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体</td><td>de</td><td>fr</td><td>biotechnologie</td></tr>
+<tr><td>Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体</td><td>pt</td><td>fr</td><td>humanitário</td></tr>
+<tr><td>Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体</td><td>fr</td><td>fr</td><td>spirituel</td></tr>
+<tr><td>bền vững serendipitous energía качество kualitas</td><td>vi</td><td>fr</td><td>bềnvững</td></tr>
+<tr><td>bền vững serendipitous energía качество kualitas</td><td>en</td><td>fr</td><td>serendipitous</td></tr>
+<tr><td>bền vững serendipitous energía качество kualitas</td><td>es</td><td>fr</td><td>energía</td></tr>
 <tr><td>pensiero sesquipedalian salud Internet رجحان</td><td>it</td><td>id</td><td>pensiero</td></tr>
 <tr><td>pensiero sesquipedalian salud Internet رجحان</td><td>en</td><td>id</td><td>sesquipedalian</td></tr>
-<tr><td>pensiero sesquipedalian salud Internet رجحان</td><td>es</td><td>id</td><td>salud</td></tr>
-<tr><td>pensiero sesquipedalian salud Internet رجحان</td><td>de</td><td>id</td><td>internet</td></tr>
-<tr><td>creativo nghiên cứu إنترنت философия</td><td>it</td><td>tr</td><td>creativo</td></tr>
-<tr><td>creativo nghiên cứu إنترنت философия</td><td>vi</td><td>tr</td><td>nghiêncứu</td></tr>
-<tr><td>فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma</td><td>es</td><td>tr</td><td>experiencia</td></tr>
-<tr><td>فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma</td><td>tr</td><td>tr</td><td>araştırma</td></tr>
-<tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>fr</td><td>nl</td><td>valeurs</td></tr>
-<tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>pl</td><td>nl</td><td>międzynarodowy</td></tr>
-<tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>it</td><td>nl</td><td>ecologico</td></tr>
-<tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>pt</td><td>nl</td><td>dialético</td></tr>
-<tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>vi</td><td>nl</td><td>lýtưởng</td></tr>
-<tr><td>giá trị luận verde 全球化 discombobulated वैश्विकीकरण 생태학</td><td>vi</td><td>tr</td><td>giátrịluận</td></tr>
-<tr><td>giá trị luận verde 全球化 discombobulated वैश्विकीकरण 생태학</td><td>es</td><td>tr</td><td>verde</td></tr>
-<tr><td>medeniyet tin tưởng educazione amour সমষ্টিগত</td><td>vi</td><td>it</td><td>tintưởng</td></tr>
-<tr><td>medeniyet tin tưởng educazione amour সমষ্টিগত</td><td>it</td><td>it</td><td>educazione</td></tr>
-<tr><td>medeniyet tin tưởng educazione amour সমষ্টিগত</td><td>fr</td><td>it</td><td>amour</td></tr>
-<tr><td>durable große आध्यात्मिक moral socjalizm</td><td>fr</td><td>tr</td><td>durable</td></tr>
-<tr><td>durable große आध्यात्मिक moral socjalizm</td><td>de</td><td>tr</td><td>große</td></tr>
-<tr><td>durable große आध्यात्मिक moral socjalizm</td><td>pt</td><td>tr</td><td>moral</td></tr>
-<tr><td>durable große आध्यात्मिक moral socjalizm</td><td>pl</td><td>tr</td><td>socjalizm</td></tr>
-<tr><td>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</td><td>es</td><td>tr</td><td>creativo</td></tr>
-<tr><td>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</td><td>fr</td><td>tr</td><td>moderne</td></tr>
-<tr><td>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</td><td>de</td><td>tr</td><td>politik</td></tr>
-<tr><td>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</td><td>vi</td><td>tr</td><td>biệnchứng</td></tr>
-<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>tr</td><td>tr</td><td>bilinç</td></tr>
-<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>en</td><td>tr</td><td>quintessential</td></tr>
-<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>zh</td><td>tr</td><td>人生观</td></tr>
-<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>vi</td><td>tr</td><td>quýgiá</td></tr>
-<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>de</td><td>tr</td><td>zukunft</td></tr>
-<tr><td>eğitim nationalisme biotecnologia قيمية มีค่า 의식 মূল্যতত্ত্ব</td><td>tr</td><td>tr</td><td>eğitim</td></tr>
-<tr><td>eğitim nationalisme biotecnologia قيمية มีค่า 의식 মূল্যতত্ত্ব</td><td>fr</td><td>tr</td><td>nationalisme</td></tr>
-<tr><td>eğitim nationalisme biotecnologia قيمية มีค่า 의식 মূল্যতত্ত্ব</td><td>pt</td><td>tr</td><td>biotecnologia</td></tr>
-<tr><td>การแสดงออก 表現 hy vọng eksistensi floccinaucinihilipilification</td><td>vi</td><td>en</td><td>hyvọng</td></tr>
+<tr><td>pensiero sesquipedalian salud Internet رجحان</td><td>es</td><td>de</td><td>salud</td></tr>
+<tr><td>pensiero sesquipedalian salud Internet رجحان</td><td>de</td><td>de</td><td>internet</td></tr>
+<tr><td>creativo nghiên cứu إنترنت философия</td><td>it</td><td>fr</td><td>creativo</td></tr>
+<tr><td>creativo nghiên cứu إنترنت философия</td><td>vi</td><td>fr</td><td>nghiêncứu</td></tr>
+<tr><td>فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma</td><td>es</td><td>fr</td><td>experiencia</td></tr>
+<tr><td>فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma</td><td>tr</td><td>fr</td><td>araştırma</td></tr>
+<tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>fr</td><td>fr</td><td>valeurs</td></tr>
+<tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>pl</td><td>fr</td><td>międzynarodowy</td></tr>
+<tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>it</td><td>fr</td><td>ecologico</td></tr>
+<tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>pt</td><td>fr</td><td>dialético</td></tr>
+<tr><td>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</td><td>vi</td><td>fr</td><td>lýtưởng</td></tr>
+<tr><td>giá trị luận verde 全球化 discombobulated वैश्विकीकरण 생태학</td><td>vi</td><td>fr</td><td>giátrịluận</td></tr>
+<tr><td>giá trị luận verde 全球化 discombobulated वैश्विकीकरण 생태학</td><td>es</td><td>fr</td><td>verde</td></tr>
+<tr><td>giá trị luận verde 全球化 discombobulated वैश्विकीकरण 생태학</td><td>en</td><td>de</td><td>discombobulated</td></tr>
+<tr><td>medeniyet tin tưởng educazione amour সমষ্টিগত</td><td>tr</td><td>en</td><td>medeniyet</td></tr>
+<tr><td>medeniyet tin tưởng educazione amour সমষ্টিগত</td><td>vi</td><td>de</td><td>tintưởng</td></tr>
+<tr><td>medeniyet tin tưởng educazione amour সমষ্টিগত</td><td>it</td><td>de</td><td>educazione</td></tr>
+<tr><td>medeniyet tin tưởng educazione amour সমষ্টিগত</td><td>fr</td><td>de</td><td>amour</td></tr>
+<tr><td>durable große आध्यात्मिक moral socjalizm</td><td>fr</td><td>fr</td><td>durable</td></tr>
+<tr><td>durable große आध्यात्मिक moral socjalizm</td><td>de</td><td>fr</td><td>große</td></tr>
+<tr><td>durable große आध्यात्मिक moral socjalizm</td><td>pt</td><td>fr</td><td>moral</td></tr>
+<tr><td>durable große आध्यात्मिक moral socjalizm</td><td>pl</td><td>fr</td><td>socjalizm</td></tr>
+<tr><td>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</td><td>es</td><td>en</td><td>creativo</td></tr>
+<tr><td>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</td><td>fr</td><td>en</td><td>moderne</td></tr>
+<tr><td>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</td><td>de</td><td>fr</td><td>politik</td></tr>
+<tr><td>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</td><td>vi</td><td>fr</td><td>biệnchứng</td></tr>
+<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>tr</td><td>fr</td><td>bilinç</td></tr>
+<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>en</td><td>fr</td><td>quintessential</td></tr>
+<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>zh</td><td>fr</td><td>人生观</td></tr>
+<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>vi</td><td>fr</td><td>quýgiá</td></tr>
+<tr><td>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</td><td>de</td><td>fr</td><td>zukunft</td></tr>
+<tr><td>eğitim nationalisme biotecnologia قيمية มีค่า 의식 মূল্যতত্ত্ব</td><td>tr</td><td>fr</td><td>eğitim</td></tr>
+<tr><td>eğitim nationalisme biotecnologia قيمية มีค่า 의식 মূল্যতত্ত্ব</td><td>fr</td><td>fr</td><td>nationalisme</td></tr>
+<tr><td>eğitim nationalisme biotecnologia قيمية มีค่า 의식 মূল্যতত্ত্ব</td><td>pt</td><td>fr</td><td>biotecnologia</td></tr>
+<tr><td>การแสดงออก 表現 hy vọng eksistensi floccinaucinihilipilification</td><td>vi</td><td>de</td><td>hyvọng</td></tr>
 <tr><td>การแสดงออก 表現 hy vọng eksistensi floccinaucinihilipilification</td><td>id</td><td>en</td><td>eksistensi</td></tr>
 <tr><td>การแสดงออก 表現 hy vọng eksistensi floccinaucinihilipilification</td><td>en</td><td>en</td><td>floccinaucinihilipilification</td></tr>
-<tr><td>ชุมชน estructural 幸福 দর্শন инновация deoxyribonucleic traditionell</td><td>en</td><td>tr</td><td>deoxyribonucleic</td></tr>
-<tr><td>ชุมชน estructural 幸福 দর্শন инновация deoxyribonucleic traditionell</td><td>de</td><td>tr</td><td>traditionell</td></tr>
-<tr><td>fenómeno مثالی ประดิษฐ์ światopogląd dilbilim روحانية জ্ঞান zeitgenössisch</td><td>pl</td><td>tr</td><td>światopogląd</td></tr>
-<tr><td>fenómeno مثالی ประดิษฐ์ światopogląd dilbilim روحانية জ্ঞান zeitgenössisch</td><td>tr</td><td>tr</td><td>dilbilim</td></tr>
-<tr><td>rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio</td><td>pl</td><td>pt</td><td>rodzina</td></tr>
-<tr><td>rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio</td><td>vi</td><td>pt</td><td>tráchnhiệm</td></tr>
-<tr><td>radiant 政治 revolução idealista</td><td>en</td><td>tr</td><td>radiant</td></tr>
-<tr><td>radiant 政治 revolução idealista</td><td>zh</td><td>tr</td><td>政治</td></tr>
-<tr><td>radiant 政治 revolução idealista</td><td>pt</td><td>tr</td><td>revolução</td></tr>
-<tr><td>radiant 政治 revolução idealista</td><td>it</td><td>tr</td><td>idealista</td></tr>
-<tr><td>internet インターネット estética mégadonnées multifaceted 스타일</td><td>pt</td><td>en</td><td>estética</td></tr>
-<tr><td>internet インターネット estética mégadonnées multifaceted 스타일</td><td>fr</td><td>en</td><td>mégadonnées</td></tr>
+<tr><td>ชุมชน estructural 幸福 দর্শন инновация deoxyribonucleic traditionell</td><td>en</td><td>en</td><td>deoxyribonucleic</td></tr>
+<tr><td>ชุมชน estructural 幸福 দর্শন инновация deoxyribonucleic traditionell</td><td>de</td><td>en</td><td>traditionell</td></tr>
+<tr><td>fenómeno مثالی ประดิษฐ์ światopogląd dilbilim روحانية জ্ঞান zeitgenössisch</td><td>pl</td><td>fr</td><td>światopogląd</td></tr>
+<tr><td>fenómeno مثالی ประดิษฐ์ światopogląd dilbilim روحانية জ্ঞান zeitgenössisch</td><td>tr</td><td>fr</td><td>dilbilim</td></tr>
+<tr><td>rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio</td><td>pl</td><td>fr</td><td>rodzina</td></tr>
+<tr><td>rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio</td><td>vi</td><td>fr</td><td>tráchnhiệm</td></tr>
+<tr><td>radiant 政治 revolução idealista</td><td>en</td><td>fr</td><td>radiant</td></tr>
+<tr><td>radiant 政治 revolução idealista</td><td>zh</td><td>fr</td><td>政治</td></tr>
+<tr><td>radiant 政治 revolução idealista</td><td>pt</td><td>fr</td><td>revolução</td></tr>
+<tr><td>radiant 政治 revolução idealista</td><td>it</td><td>fr</td><td>idealista</td></tr>
+<tr><td>internet インターネット estética mégadonnées multifaceted 스타일</td><td>pt</td><td>de</td><td>estética</td></tr>
+<tr><td>internet インターネット estética mégadonnées multifaceted 스타일</td><td>fr</td><td>de</td><td>mégadonnées</td></tr>
 <tr><td>internet インターネット estética mégadonnées multifaceted 스타일</td><td>en</td><td>en</td><td>multifaceted</td></tr>
-<tr><td>énergie 신뢰 ความคิดสร้างสรรค์ pembangunan szczęście اخلاقی</td><td>id</td><td>id</td><td>pembangunan</td></tr>
-<tr><td>énergie 신뢰 ความคิดสร้างสรรค์ pembangunan szczęście اخلاقی</td><td>pl</td><td>id</td><td>szczęście</td></tr>
-<tr><td>เทคโนโลยี moderno coletivo музыка 가치있는</td><td>it</td><td>tr</td><td>moderno</td></tr>
-<tr><td>เทคโนโลยี moderno coletivo музыка 가치있는</td><td>pt</td><td>tr</td><td>coletivo</td></tr>
-<tr><td>পরিবেশীয় अकादमिक reformizm cách mạng</td><td>tr</td><td>tr</td><td>reformizm</td></tr>
-<tr><td>পরিবেশীয় अकादमिक reformizm cách mạng</td><td>vi</td><td>tr</td><td>cáchmạng</td></tr>
-<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>en</td><td>tr</td><td>luminous</td></tr>
-<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>pl</td><td>tr</td><td>znaczenie</td></tr>
-<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>ja</td><td>tr</td><td>技能</td></tr>
-<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>it</td><td>tr</td><td>sviluppo</td></tr>
-<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>nl</td><td>tr</td><td>intelligentie</td></tr>
-<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>fr</td><td>pt</td><td>spirituel</td></tr>
-<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>vi</td><td>pt</td><td>tínhtoán</td></tr>
-<tr><td>혁명 mentalité chính trị euphoria</td><td>vi</td><td>pt</td><td>chínhtrị</td></tr>
-<tr><td>혁명 mentalité chính trị euphoria</td><td>en</td><td>nl</td><td>euphoria</td></tr>
-<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>en</td><td>tr</td><td>magnificent</td></tr>
-<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>vi</td><td>tr</td><td>giátrịluận</td></tr>
-<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>de</td><td>id</td><td>denken</td></tr>
-<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>pt</td><td>id</td><td>moral</td></tr>
-<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>id</td><td>id</td><td>penelitian</td></tr>
-<tr><td>ментальность Revolution عولمة valioso kỹ năng humanitaire</td><td>es</td><td>tr</td><td>valioso</td></tr>
-<tr><td>ментальность Revolution عولمة valioso kỹ năng humanitaire</td><td>vi</td><td>tr</td><td>kỹnăng</td></tr>
-<tr><td>ментальность Revolution عولمة valioso kỹ năng humanitaire</td><td>fr</td><td>tr</td><td>humanitaire</td></tr>
-<tr><td>comunitario miras kollektiv 인본주의 existence আধুনিক</td><td>es</td><td>tr</td><td>comunitario</td></tr>
-<tr><td>comunitario miras kollektiv 인본주의 existence আধুনিক</td><td>tr</td><td>tr</td><td>miras</td></tr>
-<tr><td>comunitario miras kollektiv 인본주의 existence আধুনিক</td><td>de</td><td>tr</td><td>kollektiv</td></tr>
-<tr><td>সাহিত্য gemeinschaftlich материализм digital tư duy 도덕적</td><td>id</td><td>tr</td><td>digital</td></tr>
-<tr><td>সাহিত্য gemeinschaftlich материализм digital tư duy 도덕적</td><td>vi</td><td>tr</td><td>tưduy</td></tr>
-<tr><td>patrimonio internet أدب কোয়ান্টাম ความรู้</td><td>es</td><td>tr</td><td>patrimonio</td></tr>
-<tr><td>patrimonio internet أدب কোয়ান্টাম ความรู้</td><td>vi</td><td>tr</td><td>internet</td></tr>
-<tr><td>جمال وجود phenomenological développement духовность</td><td>ar</td><td>ur</td><td>جمال</td></tr>
-<tr><td>جمال وجود phenomenological développement духовность</td><td>ur</td><td>ur</td><td>وجود</td></tr>
-<tr><td>جمال وجود phenomenological développement духовность</td><td>en</td><td>fr</td><td>phenomenological</td></tr>
+<tr><td>énergie 신뢰 ความคิดสร้างสรรค์ pembangunan szczęście اخلاقی</td><td>id</td><td>fr</td><td>pembangunan</td></tr>
+<tr><td>énergie 신뢰 ความคิดสร้างสรรค์ pembangunan szczęście اخلاقی</td><td>pl</td><td>fr</td><td>szczęście</td></tr>
+<tr><td>เทคโนโลยี moderno coletivo музыка 가치있는</td><td>it</td><td>fr</td><td>moderno</td></tr>
+<tr><td>เทคโนโลยี moderno coletivo музыка 가치있는</td><td>pt</td><td>fr</td><td>coletivo</td></tr>
+<tr><td>পরিবেশীয় अकादमिक reformizm cách mạng</td><td>tr</td><td>fr</td><td>reformizm</td></tr>
+<tr><td>পরিবেশীয় अकादमिक reformizm cách mạng</td><td>vi</td><td>fr</td><td>cáchmạng</td></tr>
+<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>en</td><td>fr</td><td>luminous</td></tr>
+<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>pl</td><td>fr</td><td>znaczenie</td></tr>
+<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>ja</td><td>fr</td><td>技能</td></tr>
+<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>it</td><td>fr</td><td>sviluppo</td></tr>
+<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>nl</td><td>fr</td><td>intelligentie</td></tr>
+<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>fr</td><td>fr</td><td>spirituel</td></tr>
+<tr><td>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</td><td>vi</td><td>fr</td><td>tínhtoán</td></tr>
+<tr><td>혁명 mentalité chính trị euphoria</td><td>fr</td><td>fr</td><td>mentalité</td></tr>
+<tr><td>혁명 mentalité chính trị euphoria</td><td>vi</td><td>fr</td><td>chínhtrị</td></tr>
+<tr><td>혁명 mentalité chính trị euphoria</td><td>en</td><td>fr</td><td>euphoria</td></tr>
+<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>en</td><td>fr</td><td>magnificent</td></tr>
+<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>vi</td><td>fr</td><td>giátrịluận</td></tr>
+<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>zh</td><td>fr</td><td>心理状态</td></tr>
+<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>de</td><td>fr</td><td>denken</td></tr>
+<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>pt</td><td>fr</td><td>moral</td></tr>
+<tr><td>magnificent giá trị luận 心理状态 Denken moral penelitian</td><td>id</td><td>fr</td><td>penelitian</td></tr>
+<tr><td>ментальность Revolution عولمة valioso kỹ năng humanitaire</td><td>es</td><td>fr</td><td>valioso</td></tr>
+<tr><td>ментальность Revolution عولمة valioso kỹ năng humanitaire</td><td>vi</td><td>fr</td><td>kỹnăng</td></tr>
+<tr><td>ментальность Revolution عولمة valioso kỹ năng humanitaire</td><td>fr</td><td>fr</td><td>humanitaire</td></tr>
+<tr><td>comunitario miras kollektiv 인본주의 existence আধুনিক</td><td>es</td><td>en</td><td>comunitario</td></tr>
+<tr><td>comunitario miras kollektiv 인본주의 existence আধুনিক</td><td>tr</td><td>en</td><td>miras</td></tr>
+<tr><td>comunitario miras kollektiv 인본주의 existence আধুনিক</td><td>de</td><td>en</td><td>kollektiv</td></tr>
+<tr><td>সাহিত্য gemeinschaftlich материализм digital tư duy 도덕적</td><td>id</td><td>fr</td><td>digital</td></tr>
+<tr><td>সাহিত্য gemeinschaftlich материализм digital tư duy 도덕적</td><td>vi</td><td>fr</td><td>tưduy</td></tr>
+<tr><td>patrimonio internet أدب কোয়ান্টাম ความรู้</td><td>es</td><td>fr</td><td>patrimonio</td></tr>
 </table>
 </div>
 <div id="Missing" class="tabcontent">
@@ -443,48 +510,48 @@ pre { background: #f8f8f8; border-radius: 4px; padding: 8px;}
     
 </section>
 <section><h2>Matched Sentences</h2><ul>
-<li><span class='code'>nationaal रचनात्मक varoluş</span><br>Spans: nl: nationaal; hi: रचनात्मक; tr: varoluş</li>
+<li><span class='code'>материализм 가치론 พลังงาน mentalité</span><br>Spans: ru: материализм; ko: 가치론; th: พลังงาน; fr: mentalité</li>
 </ul></section>
 <section><h2>Unmatched Sentences</h2>
 <div style='margin-bottom:1em;'><b>1.</b> <span class='code'>colectivo fascinating мудрость harmonioso ความไว้วางใจ आध्यात्मिक Nationalismus 时代精神</span><br>
 <b>Gold:</b> es: colectivo; en: fascinating; ru: мудрость; pt: harmonioso; th: ความไว้วางใจ; hi: आध्यात्मिक; de: Nationalismus; zh: 时代精神<br>
-<b>Pred:</b> en: colectivofascinating; ru: мудрость; tr: harmonioso; th: ความไว้วางใจ; hi: आध्यात्मिक; tr: nationalismus; unknown: 时代精神<br>
-<b>Alignment:</b><br>Gold(es): colectivo | Pred(en): colectivofascinating<br>Gold(en): fascinating | Pred(ru): мудрость<br>Gold(ru): мудрость | Pred(tr): harmonioso<br>Gold(pt): harmonioso | Pred(th): ความไว้วางใจ<br>Gold(th): ความไว้วางใจ | Pred(hi): आध्यात्मिक<br>Gold(hi): आध्यात्मिक | Pred(tr): nationalismus<br>Gold(de): nationalismus | Pred(unknown): 时代精神<br>Gold(zh): 时代精神 | Pred(): <br>
+<b>Pred:</b> en: colectivofascinating; ru: мудрость; en: harmonioso; th: ความไว้วางใจ; hi: आध्यात्मिक; fr: nationalismus; unknown: 时代精神<br>
+<b>Alignment:</b><br>Gold(es): colectivo | Pred(en): colectivofascinating<br>Gold(en): fascinating | Pred(ru): мудрость<br>Gold(ru): мудрость | Pred(en): harmonioso<br>Gold(pt): harmonioso | Pred(th): ความไว้วางใจ<br>Gold(th): ความไว้วางใจ | Pred(hi): आध्यात्मिक<br>Gold(hi): आध्यात्मिक | Pred(fr): nationalismus<br>Gold(de): nationalismus | Pred(unknown): 时代精神<br>Gold(zh): 时代精神 | Pred(): <br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>2.</b> <span class='code'>sublime تقليد uluslararası teknologi сознание</span><br>
 <b>Gold:</b> en: sublime; ar: تقليد; tr: uluslararası; id: teknologi; ru: сознание<br>
-<b>Pred:</b> tr: sublime; ur: تقليد; tr: uluslararasıteknologi; ru: сознание<br>
-<b>Alignment:</b><br>Gold(en): sublime | Pred(tr): sublime<br>Gold(ar): تقليد | Pred(ur): تقليد<br>Gold(tr): uluslararası | Pred(tr): uluslararasıteknologi<br>Gold(id): teknologi | Pred(ru): сознание<br>Gold(ru): сознание | Pred(): <br>
+<b>Pred:</b> fr: sublime; ar: تقليد; fr: uluslararasıteknologi; ru: сознание<br>
+<b>Alignment:</b><br>Gold(en): sublime | Pred(fr): sublime<br>Gold(ar): تقليد | Pred(ar): تقليد<br>Gold(tr): uluslararası | Pred(fr): uluslararasıteknologi<br>Gold(id): teknologi | Pred(ru): сознание<br>Gold(ru): сознание | Pred(): <br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>3.</b> <span class='code'>다문화 hạnh phúc historia 唯物論 ब्लॉकचेन опыт multiculturel internasional</span><br>
 <b>Gold:</b> ko: 다문화; vi: hạnh phúc; es: historia; ja: 唯物論; hi: ब्लॉकचेन; ru: опыт; fr: multiculturel; id: internasional<br>
-<b>Pred:</b> ko: 다문화; pt: hạnhphúchistoria; unknown: 唯物論; hi: ब्लॉकचेन; ru: опыт; tr: multiculturelinternasional<br>
-<b>Alignment:</b><br>Gold(ko): 다문화 | Pred(ko): 다문화<br>Gold(vi): hạnhphúc | Pred(pt): hạnhphúchistoria<br>Gold(es): historia | Pred(unknown): 唯物論<br>Gold(ja): 唯物論 | Pred(hi): ब्लॉकचेन<br>Gold(hi): ब्लॉकचेन | Pred(ru): опыт<br>Gold(ru): опыт | Pred(tr): multiculturelinternasional<br>Gold(fr): multiculturel | Pred(): <br>Gold(id): internasional | Pred(): <br>
+<b>Pred:</b> ko: 다문화; fr: hạnhphúchistoria; unknown: 唯物論; hi: ब्लॉकचेन; ru: опыт; fr: multiculturelinternasional<br>
+<b>Alignment:</b><br>Gold(ko): 다문화 | Pred(ko): 다문화<br>Gold(vi): hạnhphúc | Pred(fr): hạnhphúchistoria<br>Gold(es): historia | Pred(unknown): 唯物論<br>Gold(ja): 唯物論 | Pred(hi): ब्लॉकचेन<br>Gold(hi): ब्लॉकचेन | Pred(ru): опыт<br>Gold(ru): опыт | Pred(fr): multiculturelinternasional<br>Gold(fr): multiculturel | Pred(): <br>Gold(id): internasional | Pred(): <br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>4.</b> <span class='code'>глобализация नैतिक معرفة futuro</span><br>
 <b>Gold:</b> ru: глобализация; hi: नैतिक; ar: معرفة; pt: futuro<br>
-<b>Pred:</b> ru: глобализация; hi: नैतिक; ur: معرفة; tr: futuro<br>
-<b>Alignment:</b><br>Gold(ru): глобализация | Pred(ru): глобализация<br>Gold(hi): नैतिक | Pred(hi): नैतिक<br>Gold(ar): معرفة | Pred(ur): معرفة<br>Gold(pt): futuro | Pred(tr): futuro<br>
+<b>Pred:</b> ru: глобализация; hi: नैतिक; ur: معرفة; fr: futuro<br>
+<b>Alignment:</b><br>Gold(ru): глобализация | Pred(ru): глобализация<br>Gold(hi): नैतिक | Pred(hi): नैतिक<br>Gold(ar): معرفة | Pred(ur): معرفة<br>Gold(pt): futuro | Pred(fr): futuro<br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>5.</b> <span class='code'>inovação 民族精神 modernisasi</span><br>
 <b>Gold:</b> pt: inovação; zh: 民族精神; id: modernisasi<br>
-<b>Pred:</b> tr: inovação民族精神modernisasi<br>
-<b>Alignment:</b><br>Gold(pt): inovação | Pred(tr): inovação民族精神modernisasi<br>Gold(zh): 民族精神 | Pred(): <br>Gold(id): modernisasi | Pred(): <br>
+<b>Pred:</b> fr: inovação民族精神modernisasi<br>
+<b>Alignment:</b><br>Gold(pt): inovação | Pred(fr): inovação民族精神modernisasi<br>Gold(zh): 民族精神 | Pred(): <br>Gold(id): modernisasi | Pred(): <br>
 <b>Type:</b> none</div>
 <div style='margin-bottom:1em;'><b>6.</b> <span class='code'>pensiero 構造的 창조적 contemporain</span><br>
 <b>Gold:</b> it: pensiero; ja: 構造的; ko: 창조적; fr: contemporain<br>
-<b>Pred:</b> id: pensiero; unknown: 構造的; ko: 창조적; tr: contemporain<br>
-<b>Alignment:</b><br>Gold(it): pensiero | Pred(id): pensiero<br>Gold(ja): 構造的 | Pred(unknown): 構造的<br>Gold(ko): 창조적 | Pred(ko): 창조적<br>Gold(fr): contemporain | Pred(tr): contemporain<br>
+<b>Pred:</b> id: pensiero; unknown: 構造的; ko: 창조적; fr: contemporain<br>
+<b>Alignment:</b><br>Gold(it): pensiero | Pred(id): pensiero<br>Gold(ja): 構造的 | Pred(unknown): 構造的<br>Gold(ko): 창조적 | Pred(ko): 창조적<br>Gold(fr): contemporain | Pred(fr): contemporain<br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>7.</b> <span class='code'>Biotechnologie humanitário spirituel นวัตกรรม creativo 构建人类命运共同体</span><br>
 <b>Gold:</b> de: Biotechnologie; pt: humanitário; fr: spirituel; th: นวัตกรรม; it: creativo; zh: 构建人类命运共同体<br>
-<b>Pred:</b> tr: biotechnologiehumanitáriospirituel; th: นวัตกรรม; tr: creativo; unknown: 构建人类命运共同体<br>
-<b>Alignment:</b><br>Gold(de): biotechnologie | Pred(tr): biotechnologiehumanitáriospirituel<br>Gold(pt): humanitário | Pred(th): นวัตกรรม<br>Gold(fr): spirituel | Pred(tr): creativo<br>Gold(th): นวัตกรรม | Pred(unknown): 构建人类命运共同体<br>Gold(it): creativo | Pred(): <br>Gold(zh): 构建人类命运共同体 | Pred(): <br>
+<b>Pred:</b> fr: biotechnologiehumanitáriospirituel; th: นวัตกรรม; fr: creativo; unknown: 构建人类命运共同体<br>
+<b>Alignment:</b><br>Gold(de): biotechnologie | Pred(fr): biotechnologiehumanitáriospirituel<br>Gold(pt): humanitário | Pred(th): นวัตกรรม<br>Gold(fr): spirituel | Pred(fr): creativo<br>Gold(th): นวัตกรรม | Pred(unknown): 构建人类命运共同体<br>Gold(it): creativo | Pred(): <br>Gold(zh): 构建人类命运共同体 | Pred(): <br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>8.</b> <span class='code'>bền vững serendipitous energía качество kualitas</span><br>
 <b>Gold:</b> vi: bền vững; en: serendipitous; es: energía; ru: качество; id: kualitas<br>
-<b>Pred:</b> id: bềnvữngserendipitousenergía; ru: качество; tr: kualitas<br>
-<b>Alignment:</b><br>Gold(vi): bềnvững | Pred(id): bềnvữngserendipitousenergía<br>Gold(en): serendipitous | Pred(ru): качество<br>Gold(es): energía | Pred(tr): kualitas<br>Gold(ru): качество | Pred(): <br>Gold(id): kualitas | Pred(): <br>
+<b>Pred:</b> fr: bềnvữngserendipitousenergía; ru: качество; fr: kualitas<br>
+<b>Alignment:</b><br>Gold(vi): bềnvững | Pred(fr): bềnvữngserendipitousenergía<br>Gold(en): serendipitous | Pred(ru): качество<br>Gold(es): energía | Pred(fr): kualitas<br>Gold(ru): качество | Pred(): <br>Gold(id): kualitas | Pred(): <br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>9.</b> <span class='code'>تخلیق ชุมชน প্রযুক্তিগত</span><br>
 <b>Gold:</b> ur: تخلیق; th: ชุมชน; bn: প্রযুক্তিগত<br>
@@ -493,208 +560,208 @@ pre { background: #f8f8f8; border-radius: 4px; padding: 8px;}
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>10.</b> <span class='code'>pensiero sesquipedalian salud Internet رجحان</span><br>
 <b>Gold:</b> it: pensiero; en: sesquipedalian; es: salud; de: Internet; ur: رجحان<br>
-<b>Pred:</b> id: pensierosesquipedaliansaludinternet; ur: رجحان<br>
-<b>Alignment:</b><br>Gold(it): pensiero | Pred(id): pensierosesquipedaliansaludinternet<br>Gold(en): sesquipedalian | Pred(ur): رجحان<br>Gold(es): salud | Pred(): <br>Gold(de): internet | Pred(): <br>Gold(ur): رجحان | Pred(): <br>
-<b>Type:</b> partial</div>
+<b>Pred:</b> id: pen; de: siero; id: ses; en: quiped; de: aliansaludinternet; ar: رجحان<br>
+<b>Alignment:</b><br>Gold(it): pensiero | Pred(id): pen<br>Gold(en): sesquipedalian | Pred(de): siero<br>Gold(es): salud | Pred(id): ses<br>Gold(de): internet | Pred(en): quiped<br>Gold(ur): رجحان | Pred(de): aliansaludinternet<br>Gold():  | Pred(ar): رجحان<br>
+<b>Type:</b> none</div>
 <div style='margin-bottom:1em;'><b>11.</b> <span class='code'>creativo nghiên cứu إنترنت философия</span><br>
 <b>Gold:</b> it: creativo; vi: nghiên cứu; ar: إنترنت; ru: философия<br>
-<b>Pred:</b> tr: creativonghiêncứu; ur: إنترنت; ru: философия<br>
-<b>Alignment:</b><br>Gold(it): creativo | Pred(tr): creativonghiêncứu<br>Gold(vi): nghiêncứu | Pred(ur): إنترنت<br>Gold(ar): إنترنت | Pred(ru): философия<br>Gold(ru): философия | Pred(): <br>
+<b>Pred:</b> fr: creativonghiêncứu; ar: إنترنت; ru: философия<br>
+<b>Alignment:</b><br>Gold(it): creativo | Pred(fr): creativonghiêncứu<br>Gold(vi): nghiêncứu | Pred(ar): إنترنت<br>Gold(ar): إنترنت | Pred(ru): философия<br>Gold(ru): философия | Pred(): <br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>12.</b> <span class='code'>فلسفہ 知識 Spiritualität 아름다움 จิตสำนึก 历史唯物主义 experiencia araştırma</span><br>
 <b>Gold:</b> ur: فلسفہ; ja: 知識; de: Spiritualität; ko: 아름다움; th: จิตสำนึก; zh: 历史唯物主义; es: experiencia; tr: araştırma<br>
-<b>Pred:</b> ar: فلسفہ; unknown: 知識; tr: spiritualität; ko: 아름다움; th: จิตสำนึก; unknown: 历史唯物主义; tr: experienciaaraştırma<br>
-<b>Alignment:</b><br>Gold(ur): فلسفہ | Pred(ar): فلسفہ<br>Gold(ja): 知識 | Pred(unknown): 知識<br>Gold(de): spiritualität | Pred(tr): spiritualität<br>Gold(ko): 아름다움 | Pred(ko): 아름다움<br>Gold(th): จิตสำนึก | Pred(th): จิตสำนึก<br>Gold(zh): 历史唯物主义 | Pred(unknown): 历史唯物主义<br>Gold(es): experiencia | Pred(tr): experienciaaraştırma<br>Gold(tr): araştırma | Pred(): <br>
+<b>Pred:</b> ar: فلسفہ; unknown: 知識; fr: spiritualität; ko: 아름다움; th: จิตสำนึก; unknown: 历史唯物主义; fr: experienciaaraştırma<br>
+<b>Alignment:</b><br>Gold(ur): فلسفہ | Pred(ar): فلسفہ<br>Gold(ja): 知識 | Pred(unknown): 知識<br>Gold(de): spiritualität | Pred(fr): spiritualität<br>Gold(ko): 아름다움 | Pred(ko): 아름다움<br>Gold(th): จิตสำนึก | Pred(th): จิตสำนึก<br>Gold(zh): 历史唯物主义 | Pred(unknown): 历史唯物主义<br>Gold(es): experiencia | Pred(fr): experienciaaraştırma<br>Gold(tr): araştırma | Pred(): <br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>13.</b> <span class='code'>valeurs międzynarodowy ecologico dialético lý tưởng 経済 শৃঙ্খল</span><br>
 <b>Gold:</b> fr: valeurs; pl: międzynarodowy; it: ecologico; pt: dialético; vi: lý tưởng; ja: 経済; bn: শৃঙ্খল<br>
-<b>Pred:</b> nl: valeursmiędzynarodowyecologicodialéticolýtưởng; unknown: 経済; bn: শৃঙ্খল<br>
-<b>Alignment:</b><br>Gold(fr): valeurs | Pred(nl): valeursmiędzynarodowyecologicodialéticolýtưởng<br>Gold(pl): międzynarodowy | Pred(unknown): 経済<br>Gold(it): ecologico | Pred(bn): শৃঙ্খল<br>Gold(pt): dialético | Pred(): <br>Gold(vi): lýtưởng | Pred(): <br>Gold(ja): 経済 | Pred(): <br>Gold(bn): শৃঙ্খল | Pred(): <br>
+<b>Pred:</b> fr: valeursmiędzynarodowyecologicodialéticolýtưởng; unknown: 経済; bn: শৃঙ্খল<br>
+<b>Alignment:</b><br>Gold(fr): valeurs | Pred(fr): valeursmiędzynarodowyecologicodialéticolýtưởng<br>Gold(pl): międzynarodowy | Pred(unknown): 経済<br>Gold(it): ecologico | Pred(bn): শৃঙ্খল<br>Gold(pt): dialético | Pred(): <br>Gold(vi): lýtưởng | Pred(): <br>Gold(ja): 経済 | Pred(): <br>Gold(bn): শৃঙ্খল | Pred(): <br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>14.</b> <span class='code'>fenômeno সাহিত্য innowacja</span><br>
 <b>Gold:</b> pt: fenômeno; bn: সাহিত্য; pl: innowacja<br>
-<b>Pred:</b> tr: fenômeno; bn: সাহিত্য; tr: innowacja<br>
-<b>Alignment:</b><br>Gold(pt): fenômeno | Pred(tr): fenômeno<br>Gold(bn): সাহিত্য | Pred(bn): সাহিত্য<br>Gold(pl): innowacja | Pred(tr): innowacja<br>
+<b>Pred:</b> fr: fenômeno; bn: সাহিত্য; fr: innowacja<br>
+<b>Alignment:</b><br>Gold(pt): fenômeno | Pred(fr): fenômeno<br>Gold(bn): সাহিত্য | Pred(bn): সাহিত্য<br>Gold(pl): innowacja | Pred(fr): innowacja<br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>15.</b> <span class='code'>giá trị luận verde 全球化 discombobulated वैश्विकीकरण 생태학</span><br>
 <b>Gold:</b> vi: giá trị luận; es: verde; zh: 全球化; en: discombobulated; hi: वैश्विकीकरण; ko: 생태학<br>
-<b>Pred:</b> tr: giátrịluậnverde; unknown: 全球化; en: discombobulated; hi: वैश्विकीकरण; ko: 생태학<br>
-<b>Alignment:</b><br>Gold(vi): giátrịluận | Pred(tr): giátrịluậnverde<br>Gold(es): verde | Pred(unknown): 全球化<br>Gold(zh): 全球化 | Pred(en): discombobulated<br>Gold(en): discombobulated | Pred(hi): वैश्विकीकरण<br>Gold(hi): वैश्विकीकरण | Pred(ko): 생태학<br>Gold(ko): 생태학 | Pred(): <br>
+<b>Pred:</b> fr: giátrịluậnverde; unknown: 全球化; de: discombob; en: ulated; hi: वैश्विकीकरण; ko: 생태학<br>
+<b>Alignment:</b><br>Gold(vi): giátrịluận | Pred(fr): giátrịluậnverde<br>Gold(es): verde | Pred(unknown): 全球化<br>Gold(zh): 全球化 | Pred(de): discombob<br>Gold(en): discombobulated | Pred(en): ulated<br>Gold(hi): वैश्विकीकरण | Pred(hi): वैश्विकीकरण<br>Gold(ko): 생태학 | Pred(ko): 생태학<br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>16.</b> <span class='code'>medeniyet tin tưởng educazione amour সমষ্টিগত</span><br>
 <b>Gold:</b> tr: medeniyet; vi: tin tưởng; it: educazione; fr: amour; bn: সমষ্টিগত<br>
-<b>Pred:</b> id: medeniyet; it: tintưởngeducazioneamour; bn: সমষ্টিগত<br>
-<b>Alignment:</b><br>Gold(tr): medeniyet | Pred(id): medeniyet<br>Gold(vi): tintưởng | Pred(it): tintưởngeducazioneamour<br>Gold(it): educazione | Pred(bn): সমষ্টিগত<br>Gold(fr): amour | Pred(): <br>Gold(bn): সমষ্টিগত | Pred(): <br>
+<b>Pred:</b> en: med; de: eniyettintưởngeducazioneamour; bn: সমষ্টিগত<br>
+<b>Alignment:</b><br>Gold(tr): medeniyet | Pred(en): med<br>Gold(vi): tintưởng | Pred(de): eniyettintưởngeducazioneamour<br>Gold(it): educazione | Pred(bn): সমষ্টিগত<br>Gold(fr): amour | Pred(): <br>Gold(bn): সমষ্টিগত | Pred(): <br>
 <b>Type:</b> partial</div>
 <div style='margin-bottom:1em;'><b>17.</b> <span class='code'>智慧 ความคิด राष्ट्रीय مهارة</span><br>
 <b>Gold:</b> zh: 智慧; th: ความคิด; hi: राष्ट्रीय; ar: مهارة<br>
 <b>Pred:</b> unknown: 智慧; th: ความคิด; hi: राष्ट्रीय; ur: مهارة<br>
 <b>Alignment:</b><br>Gold(zh): 智慧 | Pred(unknown): 智慧<br>Gold(th): ความคิด | Pred(th): ความคิด<br>Gold(hi): राष्ट्रीय | Pred(hi): राष्ट्रीय<br>Gold(ar): مهارة | Pred(ur): مهارة<br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>18.</b> <span class='code'>felicidade марксистский 国家 matérialisme اجتماعی</span><br>
+<div style='margin-bottom:1em;'><b>18.</b> <span class='code'>nationaal रचनात्मक varoluş</span><br>
+<b>Gold:</b> nl: nationaal; hi: रचनात्मक; tr: varoluş<br>
+<b>Pred:</b> fr: nationaal; hi: रचनात्मक; fr: varoluş<br>
+<b>Alignment:</b><br>Gold(nl): nationaal | Pred(fr): nationaal<br>Gold(hi): रचनात्मक | Pred(hi): रचनात्मक<br>Gold(tr): varoluş | Pred(fr): varoluş<br>
+<b>Type:</b> partial</div>
+<div style='margin-bottom:1em;'><b>19.</b> <span class='code'>felicidade марксистский 国家 matérialisme اجتماعی</span><br>
 <b>Gold:</b> pt: felicidade; ru: марксистский; ja: 国家; fr: matérialisme; ur: اجتماعی<br>
-<b>Pred:</b> pt: felicidade; ru: марксистский; unknown: 国家; tr: matérialisme; ar: اجتماعی<br>
-<b>Alignment:</b><br>Gold(pt): felicidade | Pred(pt): felicidade<br>Gold(ru): марксистский | Pred(ru): марксистский<br>Gold(ja): 国家 | Pred(unknown): 国家<br>Gold(fr): matérialisme | Pred(tr): matérialisme<br>Gold(ur): اجتماعی | Pred(ar): اجتماعی<br>
+<b>Pred:</b> pt: felicidade; ru: марксистский; unknown: 国家; fr: matérialisme; ar: اجتماعی<br>
+<b>Alignment:</b><br>Gold(pt): felicidade | Pred(pt): felicidade<br>Gold(ru): марксистский | Pred(ru): марксистский<br>Gold(ja): 国家 | Pred(unknown): 国家<br>Gold(fr): matérialisme | Pred(fr): matérialisme<br>Gold(ur): اجتماعی | Pred(ar): اجتماعی<br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>19.</b> <span class='code'>durable große आध्यात्मिक moral socjalizm</span><br>
+<div style='margin-bottom:1em;'><b>20.</b> <span class='code'>durable große आध्यात्मिक moral socjalizm</span><br>
 <b>Gold:</b> fr: durable; de: große; hi: आध्यात्मिक; pt: moral; pl: socjalizm<br>
-<b>Pred:</b> tr: durablegroße; hi: आध्यात्मिक; tr: moralsocjalizm<br>
-<b>Alignment:</b><br>Gold(fr): durable | Pred(tr): durablegroße<br>Gold(de): große | Pred(hi): आध्यात्मिक<br>Gold(hi): आध्यात्मिक | Pred(tr): moralsocjalizm<br>Gold(pt): moral | Pred(): <br>Gold(pl): socjalizm | Pred(): <br>
+<b>Pred:</b> fr: durablegroße; hi: आध्यात्मिक; fr: moralsocjalizm<br>
+<b>Alignment:</b><br>Gold(fr): durable | Pred(fr): durablegroße<br>Gold(de): große | Pred(hi): आध्यात्मिक<br>Gold(hi): आध्यात्मिक | Pred(fr): moralsocjalizm<br>Gold(pt): moral | Pred(): <br>Gold(pl): socjalizm | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>20.</b> <span class='code'>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</span><br>
+<div style='margin-bottom:1em;'><b>21.</b> <span class='code'>creativo moderne моральный kwaliteit อารยธรรม Politik biện chứng संगीत</span><br>
 <b>Gold:</b> es: creativo; fr: moderne; ru: моральный; nl: kwaliteit; th: อารยธรรม; de: Politik; vi: biện chứng; hi: संगीत<br>
-<b>Pred:</b> tr: creativomoderne; ru: моральный; tr: kwaliteit; th: อารยธรรม; tr: politikbiệnchứng; hi: संगीत<br>
-<b>Alignment:</b><br>Gold(es): creativo | Pred(tr): creativomoderne<br>Gold(fr): moderne | Pred(ru): моральный<br>Gold(ru): моральный | Pred(tr): kwaliteit<br>Gold(nl): kwaliteit | Pred(th): อารยธรรม<br>Gold(th): อารยธรรม | Pred(tr): politikbiệnchứng<br>Gold(de): politik | Pred(hi): संगीत<br>Gold(vi): biệnchứng | Pred(): <br>Gold(hi): संगीत | Pred(): <br>
+<b>Pred:</b> en: creativomoderne; ru: моральный; en: kwaliteit; th: อารยธรรม; fr: politikbiệnchứng; hi: संगीत<br>
+<b>Alignment:</b><br>Gold(es): creativo | Pred(en): creativomoderne<br>Gold(fr): moderne | Pred(ru): моральный<br>Gold(ru): моральный | Pred(en): kwaliteit<br>Gold(nl): kwaliteit | Pred(th): อารยธรรม<br>Gold(th): อารยธรรม | Pred(fr): politikbiệnchứng<br>Gold(de): politik | Pred(hi): संगीत<br>Gold(vi): biệnchứng | Pred(): <br>Gold(hi): संगीत | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>21.</b> <span class='code'>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</span><br>
+<div style='margin-bottom:1em;'><b>22.</b> <span class='code'>структурный مجتمع 발전 bilinç quintessential 人生观 quý giá Zukunft</span><br>
 <b>Gold:</b> ru: структурный; ar: مجتمع; ko: 발전; tr: bilinç; en: quintessential; zh: 人生观; vi: quý giá; de: Zukunft<br>
-<b>Pred:</b> ru: структурный; ur: مجتمع; ko: 발전; tr: bilinçquintessential人生观quýgiázukunft<br>
-<b>Alignment:</b><br>Gold(ru): структурный | Pred(ru): структурный<br>Gold(ar): مجتمع | Pred(ur): مجتمع<br>Gold(ko): 발전 | Pred(ko): 발전<br>Gold(tr): bilinç | Pred(tr): bilinçquintessential人生观quýgiázukunft<br>Gold(en): quintessential | Pred(): <br>Gold(zh): 人生观 | Pred(): <br>Gold(vi): quýgiá | Pred(): <br>Gold(de): zukunft | Pred(): <br>
+<b>Pred:</b> ru: структурный; ar: مجتمع; ko: 발전; fr: bilinçquintessential人生观quýgiázukunft<br>
+<b>Alignment:</b><br>Gold(ru): структурный | Pred(ru): структурный<br>Gold(ar): مجتمع | Pred(ar): مجتمع<br>Gold(ko): 발전 | Pred(ko): 발전<br>Gold(tr): bilinç | Pred(fr): bilinçquintessential人生观quýgiázukunft<br>Gold(en): quintessential | Pred(): <br>Gold(zh): 人生观 | Pred(): <br>Gold(vi): quýgiá | Pred(): <br>Gold(de): zukunft | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>22.</b> <span class='code'>eğitim nationalisme biotecnologia قيمية มีค่า 의식 মূল্যতত্ত্ব</span><br>
+<div style='margin-bottom:1em;'><b>23.</b> <span class='code'>eğitim nationalisme biotecnologia قيمية มีค่า 의식 মূল্যতত্ত্ব</span><br>
 <b>Gold:</b> tr: eğitim; fr: nationalisme; pt: biotecnologia; ar: قيمية; th: มีค่า; ko: 의식; bn: মূল্যতত্ত্ব<br>
-<b>Pred:</b> tr: eğitimnationalismebiotecnologia; ur: قيمية; th: มีค่า; ko: 의식; bn: মূল্যতত্ত্ব<br>
-<b>Alignment:</b><br>Gold(tr): eğitim | Pred(tr): eğitimnationalismebiotecnologia<br>Gold(fr): nationalisme | Pred(ur): قيمية<br>Gold(pt): biotecnologia | Pred(th): มีค่า<br>Gold(ar): قيمية | Pred(ko): 의식<br>Gold(th): มีค่า | Pred(bn): মূল্যতত্ত্ব<br>Gold(ko): 의식 | Pred(): <br>Gold(bn): মূল্যতত্ত্ব | Pred(): <br>
+<b>Pred:</b> fr: eğitimnationalismebiotecnologia; ar: قيمية; th: มีค่า; ko: 의식; bn: মূল্যতত্ত্ব<br>
+<b>Alignment:</b><br>Gold(tr): eğitim | Pred(fr): eğitimnationalismebiotecnologia<br>Gold(fr): nationalisme | Pred(ar): قيمية<br>Gold(pt): biotecnologia | Pred(th): มีค่า<br>Gold(ar): قيمية | Pred(ko): 의식<br>Gold(th): มีค่า | Pred(bn): মূল্যতত্ত্ব<br>Gold(ko): 의식 | Pred(): <br>Gold(bn): মূল্যতত্ত্ব | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>23.</b> <span class='code'>영적 modern اختراع patrimônio</span><br>
+<div style='margin-bottom:1em;'><b>24.</b> <span class='code'>영적 modern اختراع patrimônio</span><br>
 <b>Gold:</b> ko: 영적; de: modern; ur: اختراع; pt: patrimônio<br>
-<b>Pred:</b> ko: 영적; tr: modern; ur: اختراع; tr: patrimônio<br>
-<b>Alignment:</b><br>Gold(ko): 영적 | Pred(ko): 영적<br>Gold(de): modern | Pred(tr): modern<br>Gold(ur): اختراع | Pred(ur): اختراع<br>Gold(pt): patrimônio | Pred(tr): patrimônio<br>
+<b>Pred:</b> ko: 영적; fr: modern; ar: اختراع; fr: patrimônio<br>
+<b>Alignment:</b><br>Gold(ko): 영적 | Pred(ko): 영적<br>Gold(de): modern | Pred(fr): modern<br>Gold(ur): اختراع | Pred(ar): اختراع<br>Gold(pt): patrimônio | Pred(fr): patrimônio<br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>24.</b> <span class='code'>การแสดงออก 表現 hy vọng eksistensi floccinaucinihilipilification</span><br>
+<div style='margin-bottom:1em;'><b>25.</b> <span class='code'>การแสดงออก 表現 hy vọng eksistensi floccinaucinihilipilification</span><br>
 <b>Gold:</b> th: การแสดงออก; ja: 表現; vi: hy vọng; id: eksistensi; en: floccinaucinihilipilification<br>
-<b>Pred:</b> th: การแสดงออก; unknown: 表現; en: hyvọngeksistensifloccinaucinihilipilification<br>
-<b>Alignment:</b><br>Gold(th): การแสดงออก | Pred(th): การแสดงออก<br>Gold(ja): 表現 | Pred(unknown): 表現<br>Gold(vi): hyvọng | Pred(en): hyvọngeksistensifloccinaucinihilipilification<br>Gold(id): eksistensi | Pred(): <br>Gold(en): floccinaucinihilipilification | Pred(): <br>
+<b>Pred:</b> th: การแสดงออก; unknown: 表現; de: hy; en: vọngeksistensifloccinaucinihilipilification<br>
+<b>Alignment:</b><br>Gold(th): การแสดงออก | Pred(th): การแสดงออก<br>Gold(ja): 表現 | Pred(unknown): 表現<br>Gold(vi): hyvọng | Pred(de): hy<br>Gold(id): eksistensi | Pred(en): vọngeksistensifloccinaucinihilipilification<br>Gold(en): floccinaucinihilipilification | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>25.</b> <span class='code'>ชุมชน estructural 幸福 দর্শন инновация deoxyribonucleic traditionell</span><br>
+<div style='margin-bottom:1em;'><b>26.</b> <span class='code'>ชุมชน estructural 幸福 দর্শন инновация deoxyribonucleic traditionell</span><br>
 <b>Gold:</b> th: ชุมชน; es: estructural; ja: 幸福; bn: দর্শন; ru: инновация; en: deoxyribonucleic; de: traditionell<br>
-<b>Pred:</b> th: ชุมชน; tr: estructural; unknown: 幸福; bn: দর্শন; ru: инновация; tr: deoxyribonucleictraditionell<br>
-<b>Alignment:</b><br>Gold(th): ชุมชน | Pred(th): ชุมชน<br>Gold(es): estructural | Pred(tr): estructural<br>Gold(ja): 幸福 | Pred(unknown): 幸福<br>Gold(bn): দর্শন | Pred(bn): দর্শন<br>Gold(ru): инновация | Pred(ru): инновация<br>Gold(en): deoxyribonucleic | Pred(tr): deoxyribonucleictraditionell<br>Gold(de): traditionell | Pred(): <br>
+<b>Pred:</b> th: ชุมชน; fr: estructural; unknown: 幸福; bn: দর্শন; ru: инновация; en: deoxyribonucleictraditionell<br>
+<b>Alignment:</b><br>Gold(th): ชุมชน | Pred(th): ชุมชน<br>Gold(es): estructural | Pred(fr): estructural<br>Gold(ja): 幸福 | Pred(unknown): 幸福<br>Gold(bn): দর্শন | Pred(bn): দর্শন<br>Gold(ru): инновация | Pred(ru): инновация<br>Gold(en): deoxyribonucleic | Pred(en): deoxyribonucleictraditionell<br>Gold(de): traditionell | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>26.</b> <span class='code'>fenómeno مثالی ประดิษฐ์ światopogląd dilbilim روحانية জ্ঞান zeitgenössisch</span><br>
+<div style='margin-bottom:1em;'><b>27.</b> <span class='code'>fenómeno مثالی ประดิษฐ์ światopogląd dilbilim روحانية জ্ঞান zeitgenössisch</span><br>
 <b>Gold:</b> es: fenómeno; ur: مثالی; th: ประดิษฐ์; pl: światopogląd; tr: dilbilim; ar: روحانية; bn: জ্ঞান; de: zeitgenössisch<br>
-<b>Pred:</b> tr: fenómeno; ur: مثالی; th: ประดิษฐ์; tr: światopogląddilbilim; ur: روحانية; bn: জ্ঞান; de: zeitgenössisch<br>
-<b>Alignment:</b><br>Gold(es): fenómeno | Pred(tr): fenómeno<br>Gold(ur): مثالی | Pred(ur): مثالی<br>Gold(th): ประดิษฐ์ | Pred(th): ประดิษฐ์<br>Gold(pl): światopogląd | Pred(tr): światopogląddilbilim<br>Gold(tr): dilbilim | Pred(ur): روحانية<br>Gold(ar): روحانية | Pred(bn): জ্ঞান<br>Gold(bn): জ্ঞান | Pred(de): zeitgenössisch<br>Gold(de): zeitgenössisch | Pred(): <br>
+<b>Pred:</b> fr: fenómeno; ar: مثالی; th: ประดิษฐ์; fr: światopogląddilbilim; ar: روحانية; bn: জ্ঞান; de: zeitgenössisch<br>
+<b>Alignment:</b><br>Gold(es): fenómeno | Pred(fr): fenómeno<br>Gold(ur): مثالی | Pred(ar): مثالی<br>Gold(th): ประดิษฐ์ | Pred(th): ประดิษฐ์<br>Gold(pl): światopogląd | Pred(fr): światopogląddilbilim<br>Gold(tr): dilbilim | Pred(ar): روحانية<br>Gold(ar): روحانية | Pred(bn): জ্ঞান<br>Gold(bn): জ্ঞান | Pred(de): zeitgenössisch<br>Gold(de): zeitgenössisch | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>27.</b> <span class='code'>rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio</span><br>
+<div style='margin-bottom:1em;'><b>28.</b> <span class='code'>rantai 지능 rodzina trách nhiệm ভবিষ্যৎ лингвистика patrimônio</span><br>
 <b>Gold:</b> id: rantai; ko: 지능; pl: rodzina; vi: trách nhiệm; bn: ভবিষ্যৎ; ru: лингвистика; pt: patrimônio<br>
-<b>Pred:</b> tr: rantai; ko: 지능; pt: rodzinatráchnhiệm; bn: ভবিষ্যৎ; ru: лингвистика; tr: patrimônio<br>
-<b>Alignment:</b><br>Gold(id): rantai | Pred(tr): rantai<br>Gold(ko): 지능 | Pred(ko): 지능<br>Gold(pl): rodzina | Pred(pt): rodzinatráchnhiệm<br>Gold(vi): tráchnhiệm | Pred(bn): ভবিষ্যৎ<br>Gold(bn): ভবিষ্যৎ | Pred(ru): лингвистика<br>Gold(ru): лингвистика | Pred(tr): patrimônio<br>Gold(pt): patrimônio | Pred(): <br>
+<b>Pred:</b> fr: rantai; ko: 지능; fr: rodzinatráchnhiệm; bn: ভবিষ্যৎ; ru: лингвистика; fr: patrimônio<br>
+<b>Alignment:</b><br>Gold(id): rantai | Pred(fr): rantai<br>Gold(ko): 지능 | Pred(ko): 지능<br>Gold(pl): rodzina | Pred(fr): rodzinatráchnhiệm<br>Gold(vi): tráchnhiệm | Pred(bn): ভবিষ্যৎ<br>Gold(bn): ভবিষ্যৎ | Pred(ru): лингвистика<br>Gold(ru): лингвистика | Pred(fr): patrimônio<br>Gold(pt): patrimônio | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>28.</b> <span class='code'>radiant 政治 revolução idealista</span><br>
+<div style='margin-bottom:1em;'><b>29.</b> <span class='code'>radiant 政治 revolução idealista</span><br>
 <b>Gold:</b> en: radiant; zh: 政治; pt: revolução; it: idealista<br>
-<b>Pred:</b> tr: radiant政治revoluçãoidealista<br>
-<b>Alignment:</b><br>Gold(en): radiant | Pred(tr): radiant政治revoluçãoidealista<br>Gold(zh): 政治 | Pred(): <br>Gold(pt): revolução | Pred(): <br>Gold(it): idealista | Pred(): <br>
+<b>Pred:</b> fr: radiant政治revoluçãoidealista<br>
+<b>Alignment:</b><br>Gold(en): radiant | Pred(fr): radiant政治revoluçãoidealista<br>Gold(zh): 政治 | Pred(): <br>Gold(pt): revolução | Pred(): <br>Gold(it): idealista | Pred(): <br>
 <b>Type:</b> none</div>
-<div style='margin-bottom:1em;'><b>29.</b> <span class='code'>internet インターネット estética mégadonnées multifaceted 스타일</span><br>
+<div style='margin-bottom:1em;'><b>30.</b> <span class='code'>internet インターネット estética mégadonnées multifaceted 스타일</span><br>
 <b>Gold:</b> it: internet; ja: インターネット; pt: estética; fr: mégadonnées; en: multifaceted; ko: 스타일<br>
-<b>Pred:</b> tr: internet; ja: インターネット; en: estéticamégadonnéesmultifaceted; ko: 스타일<br>
-<b>Alignment:</b><br>Gold(it): internet | Pred(tr): internet<br>Gold(ja): インターネット | Pred(ja): インターネット<br>Gold(pt): estética | Pred(en): estéticamégadonnéesmultifaceted<br>Gold(fr): mégadonnées | Pred(ko): 스타일<br>Gold(en): multifaceted | Pred(): <br>Gold(ko): 스타일 | Pred(): <br>
+<b>Pred:</b> fr: internet; ja: インターネット; de: estéticamégadonnéesmultif; en: aceted; ko: 스타일<br>
+<b>Alignment:</b><br>Gold(it): internet | Pred(fr): internet<br>Gold(ja): インターネット | Pred(ja): インターネット<br>Gold(pt): estética | Pred(de): estéticamégadonnéesmultif<br>Gold(fr): mégadonnées | Pred(en): aceted<br>Gold(en): multifaceted | Pred(ko): 스타일<br>Gold(ko): 스타일 | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>30.</b> <span class='code'>énergie 신뢰 ความคิดสร้างสรรค์ pembangunan szczęście اخلاقی</span><br>
+<div style='margin-bottom:1em;'><b>31.</b> <span class='code'>énergie 신뢰 ความคิดสร้างสรรค์ pembangunan szczęście اخلاقی</span><br>
 <b>Gold:</b> fr: énergie; ko: 신뢰; th: ความคิดสร้างสรรค์; id: pembangunan; pl: szczęście; ur: اخلاقی<br>
-<b>Pred:</b> tr: énergie; ko: 신뢰; th: ความคิดสร้างสรรค์; id: pembangunanszczęście; ar: اخلاقی<br>
-<b>Alignment:</b><br>Gold(fr): énergie | Pred(tr): énergie<br>Gold(ko): 신뢰 | Pred(ko): 신뢰<br>Gold(th): ความคิดสร้างสรรค์ | Pred(th): ความคิดสร้างสรรค์<br>Gold(id): pembangunan | Pred(id): pembangunanszczęście<br>Gold(pl): szczęście | Pred(ar): اخلاقی<br>Gold(ur): اخلاقی | Pred(): <br>
+<b>Pred:</b> fr: énergie; ko: 신뢰; th: ความคิดสร้างสรรค์; fr: pembangunanszczęście; ar: اخلاقی<br>
+<b>Alignment:</b><br>Gold(fr): énergie | Pred(fr): énergie<br>Gold(ko): 신뢰 | Pred(ko): 신뢰<br>Gold(th): ความคิดสร้างสรรค์ | Pred(th): ความคิดสร้างสรรค์<br>Gold(id): pembangunan | Pred(fr): pembangunanszczęście<br>Gold(pl): szczęście | Pred(ar): اخلاقی<br>Gold(ur): اخلاقی | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>31.</b> <span class='code'>เทคโนโลยี moderno coletivo музыка 가치있는</span><br>
+<div style='margin-bottom:1em;'><b>32.</b> <span class='code'>เทคโนโลยี moderno coletivo музыка 가치있는</span><br>
 <b>Gold:</b> th: เทคโนโลยี; it: moderno; pt: coletivo; ru: музыка; ko: 가치있는<br>
-<b>Pred:</b> th: เทคโนโลยี; tr: modernocoletivo; ru: музыка; ko: 가치있는<br>
-<b>Alignment:</b><br>Gold(th): เทคโนโลยี | Pred(th): เทคโนโลยี<br>Gold(it): moderno | Pred(tr): modernocoletivo<br>Gold(pt): coletivo | Pred(ru): музыка<br>Gold(ru): музыка | Pred(ko): 가치있는<br>Gold(ko): 가치있는 | Pred(): <br>
+<b>Pred:</b> th: เทคโนโลยี; fr: modernocoletivo; ru: музыка; ko: 가치있는<br>
+<b>Alignment:</b><br>Gold(th): เทคโนโลยี | Pred(th): เทคโนโลยี<br>Gold(it): moderno | Pred(fr): modernocoletivo<br>Gold(pt): coletivo | Pred(ru): музыка<br>Gold(ru): музыка | Pred(ko): 가치있는<br>Gold(ko): 가치있는 | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>32.</b> <span class='code'>পরিবেশীয় अकादमिक reformizm cách mạng</span><br>
+<div style='margin-bottom:1em;'><b>33.</b> <span class='code'>পরিবেশীয় अकादमिक reformizm cách mạng</span><br>
 <b>Gold:</b> bn: পরিবেশীয়; hi: अकादमिक; tr: reformizm; vi: cách mạng<br>
-<b>Pred:</b> bn: পরিবেশীয়; hi: अकादमिक; tr: reformizmcáchmạng<br>
-<b>Alignment:</b><br>Gold(bn): পরিবেশীয় | Pred(bn): পরিবেশীয়<br>Gold(hi): अकादमिक | Pred(hi): अकादमिक<br>Gold(tr): reformizm | Pred(tr): reformizmcáchmạng<br>Gold(vi): cáchmạng | Pred(): <br>
+<b>Pred:</b> bn: পরিবেশীয়; hi: अकादमिक; fr: reformizmcáchmạng<br>
+<b>Alignment:</b><br>Gold(bn): পরিবেশীয় | Pred(bn): পরিবেশীয়<br>Gold(hi): अकादमिक | Pred(hi): अकादमिक<br>Gold(tr): reformizm | Pred(fr): reformizmcáchmạng<br>Gold(vi): cáchmạng | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>33.</b> <span class='code'>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</span><br>
+<div style='margin-bottom:1em;'><b>34.</b> <span class='code'>luminous znaczenie 技能 sviluppo intelligentie عولمة spirituel tính toán</span><br>
 <b>Gold:</b> en: luminous; pl: znaczenie; ja: 技能; it: sviluppo; nl: intelligentie; ar: عولمة; fr: spirituel; vi: tính toán<br>
-<b>Pred:</b> tr: luminousznaczenie技能sviluppointelligentie; ar: عولمة; pt: spiritueltínhtoán<br>
-<b>Alignment:</b><br>Gold(en): luminous | Pred(tr): luminousznaczenie技能sviluppointelligentie<br>Gold(pl): znaczenie | Pred(ar): عولمة<br>Gold(ja): 技能 | Pred(pt): spiritueltínhtoán<br>Gold(it): sviluppo | Pred(): <br>Gold(nl): intelligentie | Pred(): <br>Gold(ar): عولمة | Pred(): <br>Gold(fr): spirituel | Pred(): <br>Gold(vi): tínhtoán | Pred(): <br>
+<b>Pred:</b> fr: luminousznaczenie技能sviluppointelligentie; ar: عولمة; fr: spiritueltínhtoán<br>
+<b>Alignment:</b><br>Gold(en): luminous | Pred(fr): luminousznaczenie技能sviluppointelligentie<br>Gold(pl): znaczenie | Pred(ar): عولمة<br>Gold(ja): 技能 | Pred(fr): spiritueltínhtoán<br>Gold(it): sviluppo | Pred(): <br>Gold(nl): intelligentie | Pred(): <br>Gold(ar): عولمة | Pred(): <br>Gold(fr): spirituel | Pred(): <br>Gold(vi): tínhtoán | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>34.</b> <span class='code'>혁명 mentalité chính trị euphoria</span><br>
+<div style='margin-bottom:1em;'><b>35.</b> <span class='code'>혁명 mentalité chính trị euphoria</span><br>
 <b>Gold:</b> ko: 혁명; fr: mentalité; vi: chính trị; en: euphoria<br>
-<b>Pred:</b> ko: 혁명; id: mentalité; pt: chính; nl: trịeuphoria<br>
-<b>Alignment:</b><br>Gold(ko): 혁명 | Pred(ko): 혁명<br>Gold(fr): mentalité | Pred(id): mentalité<br>Gold(vi): chínhtrị | Pred(pt): chính<br>Gold(en): euphoria | Pred(nl): trịeuphoria<br>
+<b>Pred:</b> ko: 혁명; fr: mentalitéchínhtrịeuphoria<br>
+<b>Alignment:</b><br>Gold(ko): 혁명 | Pred(ko): 혁명<br>Gold(fr): mentalité | Pred(fr): mentalitéchínhtrịeuphoria<br>Gold(vi): chínhtrị | Pred(): <br>Gold(en): euphoria | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>35.</b> <span class='code'>传统文化 глобализация デジタル tradisi</span><br>
+<div style='margin-bottom:1em;'><b>36.</b> <span class='code'>传统文化 глобализация デジタル tradisi</span><br>
 <b>Gold:</b> zh: 传统文化; ru: глобализация; ja: デジタル; id: tradisi<br>
-<b>Pred:</b> unknown: 传统文化; ru: глобализация; ja: デジタル; tr: tradisi<br>
-<b>Alignment:</b><br>Gold(zh): 传统文化 | Pred(unknown): 传统文化<br>Gold(ru): глобализация | Pred(ru): глобализация<br>Gold(ja): デジタル | Pred(ja): デジタル<br>Gold(id): tradisi | Pred(tr): tradisi<br>
+<b>Pred:</b> unknown: 传统文化; ru: глобализация; ja: デジタル; fr: tradisi<br>
+<b>Alignment:</b><br>Gold(zh): 传统文化 | Pred(unknown): 传统文化<br>Gold(ru): глобализация | Pred(ru): глобализация<br>Gold(ja): デジタル | Pred(ja): デジタル<br>Gold(id): tradisi | Pred(fr): tradisi<br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>36.</b> <span class='code'>magnificent giá trị luận 心理状态 Denken moral penelitian</span><br>
+<div style='margin-bottom:1em;'><b>37.</b> <span class='code'>magnificent giá trị luận 心理状态 Denken moral penelitian</span><br>
 <b>Gold:</b> en: magnificent; vi: giá trị luận; zh: 心理状态; de: Denken; pt: moral; id: penelitian<br>
-<b>Pred:</b> tr: magnificentgiátrịluận; unknown: 心理状态; id: denkenmoralpenelitian<br>
-<b>Alignment:</b><br>Gold(en): magnificent | Pred(tr): magnificentgiátrịluận<br>Gold(vi): giátrịluận | Pred(unknown): 心理状态<br>Gold(zh): 心理状态 | Pred(id): denkenmoralpenelitian<br>Gold(de): denken | Pred(): <br>Gold(pt): moral | Pred(): <br>Gold(id): penelitian | Pred(): <br>
+<b>Pred:</b> fr: magnificentgiátrịluận心理状态denkenmoralpenelitian<br>
+<b>Alignment:</b><br>Gold(en): magnificent | Pred(fr): magnificentgiátrịluận心理状态denkenmoralpenelitian<br>Gold(vi): giátrịluận | Pred(): <br>Gold(zh): 心理状态 | Pred(): <br>Gold(de): denken | Pred(): <br>Gold(pt): moral | Pred(): <br>Gold(id): penelitian | Pred(): <br>
 <b>Type:</b> none</div>
-<div style='margin-bottom:1em;'><b>37.</b> <span class='code'>ментальность Revolution عولمة valioso kỹ năng humanitaire</span><br>
+<div style='margin-bottom:1em;'><b>38.</b> <span class='code'>ментальность Revolution عولمة valioso kỹ năng humanitaire</span><br>
 <b>Gold:</b> ru: ментальность; de: Revolution; ar: عولمة; es: valioso; vi: kỹ năng; fr: humanitaire<br>
-<b>Pred:</b> ru: ментальность; en: revolution; ur: عولمة; tr: valiosokỹnănghumanitaire<br>
-<b>Alignment:</b><br>Gold(ru): ментальность | Pred(ru): ментальность<br>Gold(de): revolution | Pred(en): revolution<br>Gold(ar): عولمة | Pred(ur): عولمة<br>Gold(es): valioso | Pred(tr): valiosokỹnănghumanitaire<br>Gold(vi): kỹnăng | Pred(): <br>Gold(fr): humanitaire | Pred(): <br>
+<b>Pred:</b> ru: ментальность; fr: revolution; ar: عولمة; fr: valiosokỹnănghumanitaire<br>
+<b>Alignment:</b><br>Gold(ru): ментальность | Pred(ru): ментальность<br>Gold(de): revolution | Pred(fr): revolution<br>Gold(ar): عولمة | Pred(ar): عولمة<br>Gold(es): valioso | Pred(fr): valiosokỹnănghumanitaire<br>Gold(vi): kỹnăng | Pred(): <br>Gold(fr): humanitaire | Pred(): <br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>38.</b> <span class='code'>inteligencia اختراع modern 政治</span><br>
+<div style='margin-bottom:1em;'><b>39.</b> <span class='code'>inteligencia اختراع modern 政治</span><br>
 <b>Gold:</b> es: inteligencia; ur: اختراع; nl: modern; zh: 政治<br>
-<b>Pred:</b> tr: inteligencia; ur: اختراع; tr: modern; unknown: 政治<br>
-<b>Alignment:</b><br>Gold(es): inteligencia | Pred(tr): inteligencia<br>Gold(ur): اختراع | Pred(ur): اختراع<br>Gold(nl): modern | Pred(tr): modern<br>Gold(zh): 政治 | Pred(unknown): 政治<br>
-<b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>39.</b> <span class='code'>comunitario miras kollektiv 인본주의 existence আধুনিক</span><br>
-<b>Gold:</b> es: comunitario; tr: miras; de: kollektiv; ko: 인본주의; fr: existence; bn: আধুনিক<br>
-<b>Pred:</b> tr: comunitariomiraskollektiv; ko: 인본주의; tr: existence; bn: আধুনিক<br>
-<b>Alignment:</b><br>Gold(es): comunitario | Pred(tr): comunitariomiraskollektiv<br>Gold(tr): miras | Pred(ko): 인본주의<br>Gold(de): kollektiv | Pred(tr): existence<br>Gold(ko): 인본주의 | Pred(bn): আধুনিক<br>Gold(fr): existence | Pred(): <br>Gold(bn): আধুনিক | Pred(): <br>
-<b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>40.</b> <span class='code'>संरचनात्मक глобализация 녹색 cosmovisão</span><br>
-<b>Gold:</b> hi: संरचनात्मक; ru: глобализация; ko: 녹색; pt: cosmovisão<br>
-<b>Pred:</b> hi: संरचनात्मक; ru: глобализация; ko: 녹색; tr: cosmovisão<br>
-<b>Alignment:</b><br>Gold(hi): संरचनात्मक | Pred(hi): संरचनात्मक<br>Gold(ru): глобализация | Pred(ru): глобализация<br>Gold(ko): 녹색 | Pred(ko): 녹색<br>Gold(pt): cosmovisão | Pred(tr): cosmovisão<br>
-<b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>41.</b> <span class='code'>সাহিত্য gemeinschaftlich материализм digital tư duy 도덕적</span><br>
-<b>Gold:</b> bn: সাহিত্য; de: gemeinschaftlich; ru: материализм; id: digital; vi: tư duy; ko: 도덕적<br>
-<b>Pred:</b> bn: সাহিত্য; de: gemeinschaftlich; ru: материализм; tr: digitaltưduy; ko: 도덕적<br>
-<b>Alignment:</b><br>Gold(bn): সাহিত্য | Pred(bn): সাহিত্য<br>Gold(de): gemeinschaftlich | Pred(de): gemeinschaftlich<br>Gold(ru): материализм | Pred(ru): материализм<br>Gold(id): digital | Pred(tr): digitaltưduy<br>Gold(vi): tưduy | Pred(ko): 도덕적<br>Gold(ko): 도덕적 | Pred(): <br>
-<b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>42.</b> <span class='code'>morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe</span><br>
-<b>Gold:</b> it: morale; ko: 환경; en: ethereal; hi: भविष्य; ur: بین الاقوامی; es: patrimonio; bn: চিন্তাভাবনা; de: Erbe<br>
-<b>Pred:</b> tr: morale; ko: 환경; tr: ethereal; hi: भविष्य; ur: بینالاقوامی; tr: patrimonio; bn: চিন্তাভাবনা; tr: erbe<br>
-<b>Alignment:</b><br>Gold(it): morale | Pred(tr): morale<br>Gold(ko): 환경 | Pred(ko): 환경<br>Gold(en): ethereal | Pred(tr): ethereal<br>Gold(hi): भविष्य | Pred(hi): भविष्य<br>Gold(ur): بینالاقوامی | Pred(ur): بینالاقوامی<br>Gold(es): patrimonio | Pred(tr): patrimonio<br>Gold(bn): চিন্তাভাবনা | Pred(bn): চিন্তাভাবনা<br>Gold(de): erbe | Pred(tr): erbe<br>
-<b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>43.</b> <span class='code'>patrimonio internet أدب কোয়ান্টাম ความรู้</span><br>
-<b>Gold:</b> es: patrimonio; vi: internet; ar: أدب; bn: কোয়ান্টাম; th: ความรู้<br>
-<b>Pred:</b> tr: patrimoniointernet; ur: أدب; bn: কোয়ান্টাম; th: ความรู้<br>
-<b>Alignment:</b><br>Gold(es): patrimonio | Pred(tr): patrimoniointernet<br>Gold(vi): internet | Pred(ur): أدب<br>Gold(ar): أدب | Pred(bn): কোয়ান্টাম<br>Gold(bn): কোয়ান্টাম | Pred(th): ความรู้<br>Gold(th): ความรู้ | Pred(): <br>
-<b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>44.</b> <span class='code'>جمال وجود phenomenological développement духовность</span><br>
-<b>Gold:</b> ar: جمال; ur: وجود; en: phenomenological; fr: développement; ru: духовность<br>
-<b>Pred:</b> ur: جمالوجود; fr: phenomenologicaldéveloppement; ru: духовность<br>
-<b>Alignment:</b><br>Gold(ar): جمال | Pred(ur): جمالوجود<br>Gold(ur): وجود | Pred(fr): phenomenologicaldéveloppement<br>Gold(en): phenomenological | Pred(ru): духовность<br>Gold(fr): développement | Pred(): <br>Gold(ru): духовность | Pred(): <br>
-<b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>45.</b> <span class='code'>سبز innovazione innowacja 이상주의 musik सांस्कृतिक experience</span><br>
-<b>Gold:</b> ur: سبز; it: innovazione; pl: innowacja; ko: 이상주의; id: musik; hi: सांस्कृतिक; en: experience<br>
-<b>Pred:</b> ur: سبز; it: innovazioneinnowacja; ko: 이상주의; tr: musik; hi: सांस्कृतिक; tr: experience<br>
-<b>Alignment:</b><br>Gold(ur): سبز | Pred(ur): سبز<br>Gold(it): innovazione | Pred(it): innovazioneinnowacja<br>Gold(pl): innowacja | Pred(ko): 이상주의<br>Gold(ko): 이상주의 | Pred(tr): musik<br>Gold(id): musik | Pred(hi): सांस्कृतिक<br>Gold(hi): सांस्कृतिक | Pred(tr): experience<br>Gold(en): experience | Pred(): <br>
-<b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>46.</b> <span class='code'>chủ nghĩa cải cách ekolojik contemporâneo</span><br>
-<b>Gold:</b> vi: chủ nghĩa cải cách; tr: ekolojik; pt: contemporâneo<br>
-<b>Pred:</b> tr: chủnghĩacảicáchekolojikcontemporâneo<br>
-<b>Alignment:</b><br>Gold(vi): chủnghĩacảicách | Pred(tr): chủnghĩacảicáchekolojikcontemporâneo<br>Gold(tr): ekolojik | Pred(): <br>Gold(pt): contemporâneo | Pred(): <br>
+<b>Pred:</b> fr: inteligencia; ar: اختراع; fr: modern; unknown: 政治<br>
+<b>Alignment:</b><br>Gold(es): inteligencia | Pred(fr): inteligencia<br>Gold(ur): اختراع | Pred(ar): اختراع<br>Gold(nl): modern | Pred(fr): modern<br>Gold(zh): 政治 | Pred(unknown): 政治<br>
 <b>Type:</b> none</div>
-<div style='margin-bottom:1em;'><b>47.</b> <span class='code'>مثالی historia 创新思维 digital দক্ষতা kesadaran</span><br>
+<div style='margin-bottom:1em;'><b>40.</b> <span class='code'>comunitario miras kollektiv 인본주의 existence আধুনিক</span><br>
+<b>Gold:</b> es: comunitario; tr: miras; de: kollektiv; ko: 인본주의; fr: existence; bn: আধুনিক<br>
+<b>Pred:</b> en: comunitariomiraskollektiv; ko: 인본주의; en: existence; bn: আধুনিক<br>
+<b>Alignment:</b><br>Gold(es): comunitario | Pred(en): comunitariomiraskollektiv<br>Gold(tr): miras | Pred(ko): 인본주의<br>Gold(de): kollektiv | Pred(en): existence<br>Gold(ko): 인본주의 | Pred(bn): আধুনিক<br>Gold(fr): existence | Pred(): <br>Gold(bn): আধুনিক | Pred(): <br>
+<b>Type:</b> partial</div>
+<div style='margin-bottom:1em;'><b>41.</b> <span class='code'>संरचनात्मक глобализация 녹색 cosmovisão</span><br>
+<b>Gold:</b> hi: संरचनात्मक; ru: глобализация; ko: 녹색; pt: cosmovisão<br>
+<b>Pred:</b> hi: संरचनात्मक; ru: глобализация; ko: 녹색; fr: cosmovisão<br>
+<b>Alignment:</b><br>Gold(hi): संरचनात्मक | Pred(hi): संरचनात्मक<br>Gold(ru): глобализация | Pred(ru): глобализация<br>Gold(ko): 녹색 | Pred(ko): 녹색<br>Gold(pt): cosmovisão | Pred(fr): cosmovisão<br>
+<b>Type:</b> partial</div>
+<div style='margin-bottom:1em;'><b>42.</b> <span class='code'>সাহিত্য gemeinschaftlich материализм digital tư duy 도덕적</span><br>
+<b>Gold:</b> bn: সাহিত্য; de: gemeinschaftlich; ru: материализм; id: digital; vi: tư duy; ko: 도덕적<br>
+<b>Pred:</b> bn: সাহিত্য; de: gemeinschaftlich; ru: материализм; fr: digitaltưduy; ko: 도덕적<br>
+<b>Alignment:</b><br>Gold(bn): সাহিত্য | Pred(bn): সাহিত্য<br>Gold(de): gemeinschaftlich | Pred(de): gemeinschaftlich<br>Gold(ru): материализм | Pred(ru): материализм<br>Gold(id): digital | Pred(fr): digitaltưduy<br>Gold(vi): tưduy | Pred(ko): 도덕적<br>Gold(ko): 도덕적 | Pred(): <br>
+<b>Type:</b> partial</div>
+<div style='margin-bottom:1em;'><b>43.</b> <span class='code'>morale 환경 ethereal भविष्य بین الاقوامی patrimonio চিন্তাভাবনা Erbe</span><br>
+<b>Gold:</b> it: morale; ko: 환경; en: ethereal; hi: भविष्य; ur: بین الاقوامی; es: patrimonio; bn: চিন্তাভাবনা; de: Erbe<br>
+<b>Pred:</b> en: morale; ko: 환경; fr: ethereal; hi: भविष्य; ur: بینالاقوامی; fr: patrimonio; bn: চিন্তাভাবনা; en: erbe<br>
+<b>Alignment:</b><br>Gold(it): morale | Pred(en): morale<br>Gold(ko): 환경 | Pred(ko): 환경<br>Gold(en): ethereal | Pred(fr): ethereal<br>Gold(hi): भविष्य | Pred(hi): भविष्य<br>Gold(ur): بینالاقوامی | Pred(ur): بینالاقوامی<br>Gold(es): patrimonio | Pred(fr): patrimonio<br>Gold(bn): চিন্তাভাবনা | Pred(bn): চিন্তাভাবনা<br>Gold(de): erbe | Pred(en): erbe<br>
+<b>Type:</b> partial</div>
+<div style='margin-bottom:1em;'><b>44.</b> <span class='code'>patrimonio internet أدب কোয়ান্টাম ความรู้</span><br>
+<b>Gold:</b> es: patrimonio; vi: internet; ar: أدب; bn: কোয়ান্টাম; th: ความรู้<br>
+<b>Pred:</b> fr: patrimoniointernet; ar: أدب; bn: কোয়ান্টাম; th: ความรู้<br>
+<b>Alignment:</b><br>Gold(es): patrimonio | Pred(fr): patrimoniointernet<br>Gold(vi): internet | Pred(ar): أدب<br>Gold(ar): أدب | Pred(bn): কোয়ান্টাম<br>Gold(bn): কোয়ান্টাম | Pred(th): ความรู้<br>Gold(th): ความรู้ | Pred(): <br>
+<b>Type:</b> partial</div>
+<div style='margin-bottom:1em;'><b>45.</b> <span class='code'>جمال وجود phenomenological développement духовность</span><br>
+<b>Gold:</b> ar: جمال; ur: وجود; en: phenomenological; fr: développement; ru: духовность<br>
+<b>Pred:</b> ar: جمالوجود; fr: phenomenologicaldéveloppement; ru: духовность<br>
+<b>Alignment:</b><br>Gold(ar): جمال | Pred(ar): جمالوجود<br>Gold(ur): وجود | Pred(fr): phenomenologicaldéveloppement<br>Gold(en): phenomenological | Pred(ru): духовность<br>Gold(fr): développement | Pred(): <br>Gold(ru): духовность | Pred(): <br>
+<b>Type:</b> partial</div>
+<div style='margin-bottom:1em;'><b>46.</b> <span class='code'>سبز innovazione innowacja 이상주의 musik सांस्कृतिक experience</span><br>
+<b>Gold:</b> ur: سبز; it: innovazione; pl: innowacja; ko: 이상주의; id: musik; hi: सांस्कृतिक; en: experience<br>
+<b>Pred:</b> ar: سبز; it: innovazioneinnowacja; ko: 이상주의; fr: musik; hi: सांस्कृतिक; fr: experience<br>
+<b>Alignment:</b><br>Gold(ur): سبز | Pred(ar): سبز<br>Gold(it): innovazione | Pred(it): innovazioneinnowacja<br>Gold(pl): innowacja | Pred(ko): 이상주의<br>Gold(ko): 이상주의 | Pred(fr): musik<br>Gold(id): musik | Pred(hi): सांस्कृतिक<br>Gold(hi): सांस्कृतिक | Pred(fr): experience<br>Gold(en): experience | Pred(): <br>
+<b>Type:</b> partial</div>
+<div style='margin-bottom:1em;'><b>47.</b> <span class='code'>chủ nghĩa cải cách ekolojik contemporâneo</span><br>
+<b>Gold:</b> vi: chủ nghĩa cải cách; tr: ekolojik; pt: contemporâneo<br>
+<b>Pred:</b> fr: chủnghĩacảicáchekolojikcontemporâneo<br>
+<b>Alignment:</b><br>Gold(vi): chủnghĩacảicách | Pred(fr): chủnghĩacảicáchekolojikcontemporâneo<br>Gold(tr): ekolojik | Pred(): <br>Gold(pt): contemporâneo | Pred(): <br>
+<b>Type:</b> none</div>
+<div style='margin-bottom:1em;'><b>48.</b> <span class='code'>مثالی historia 创新思维 digital দক্ষতা kesadaran</span><br>
 <b>Gold:</b> ur: مثالی; pl: historia; zh: 创新思维; es: digital; bn: দক্ষতা; id: kesadaran<br>
-<b>Pred:</b> ur: مثالی; tr: historia创新思维digital; bn: দক্ষতা; id: kesadaran<br>
-<b>Alignment:</b><br>Gold(ur): مثالی | Pred(ur): مثالی<br>Gold(pl): historia | Pred(tr): historia创新思维digital<br>Gold(zh): 创新思维 | Pred(bn): দক্ষতা<br>Gold(es): digital | Pred(id): kesadaran<br>Gold(bn): দক্ষতা | Pred(): <br>Gold(id): kesadaran | Pred(): <br>
+<b>Pred:</b> ar: مثالی; fr: historia; unknown: 创新思维; en: digital; bn: দক্ষতা; en: kesadaran<br>
+<b>Alignment:</b><br>Gold(ur): مثالی | Pred(ar): مثالی<br>Gold(pl): historia | Pred(fr): historia<br>Gold(zh): 创新思维 | Pred(unknown): 创新思维<br>Gold(es): digital | Pred(en): digital<br>Gold(bn): দক্ষতা | Pred(bn): দক্ষতা<br>Gold(id): kesadaran | Pred(en): kesadaran<br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>48.</b> <span class='code'>اظہار kunstmatige 유산 सामूहिक</span><br>
+<div style='margin-bottom:1em;'><b>49.</b> <span class='code'>اظہار kunstmatige 유산 सामूहिक</span><br>
 <b>Gold:</b> ur: اظہار; nl: kunstmatige; ko: 유산; hi: सामूहिक<br>
-<b>Pred:</b> ur: اظہار; tr: kunstmatige; ko: 유산; hi: सामूहिक<br>
-<b>Alignment:</b><br>Gold(ur): اظہار | Pred(ur): اظہار<br>Gold(nl): kunstmatige | Pred(tr): kunstmatige<br>Gold(ko): 유산 | Pred(ko): 유산<br>Gold(hi): सामूहिक | Pred(hi): सामूहिक<br>
+<b>Pred:</b> ar: اظہار; fr: kunstmatige; ko: 유산; hi: सामूहिक<br>
+<b>Alignment:</b><br>Gold(ur): اظہار | Pred(ar): اظہار<br>Gold(nl): kunstmatige | Pred(fr): kunstmatige<br>Gold(ko): 유산 | Pred(ko): 유산<br>Gold(hi): सामूहिक | Pred(hi): सामूहिक<br>
 <b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>49.</b> <span class='code'>technologie творческий humanisme जीवन</span><br>
+<div style='margin-bottom:1em;'><b>50.</b> <span class='code'>technologie творческий humanisme जीवन</span><br>
 <b>Gold:</b> fr: technologie; ru: творческий; nl: humanisme; hi: जीवन<br>
-<b>Pred:</b> tr: technologie; ru: творческий; tr: humanisme; hi: जीवन<br>
-<b>Alignment:</b><br>Gold(fr): technologie | Pred(tr): technologie<br>Gold(ru): творческий | Pred(ru): творческий<br>Gold(nl): humanisme | Pred(tr): humanisme<br>Gold(hi): जीवन | Pred(hi): जीवन<br>
-<b>Type:</b> partial</div>
-<div style='margin-bottom:1em;'><b>50.</b> <span class='code'>美しさ вычисления การแสดงออก storia 양자</span><br>
-<b>Gold:</b> ja: 美しさ; ru: вычисления; th: การแสดงออก; it: storia; ko: 양자<br>
-<b>Pred:</b> unknown: 美; ja: しさ; ru: вычисления; th: การแสดงออก; tr: storia; ko: 양자<br>
-<b>Alignment:</b><br>Gold(ja): 美しさ | Pred(unknown): 美<br>Gold(ru): вычисления | Pred(ja): しさ<br>Gold(th): การแสดงออก | Pred(ru): вычисления<br>Gold(it): storia | Pred(th): การแสดงออก<br>Gold(ko): 양자 | Pred(tr): storia<br>Gold():  | Pred(ko): 양자<br>
+<b>Pred:</b> en: technologie; ru: творческий; fr: humanisme; hi: जीवन<br>
+<b>Alignment:</b><br>Gold(fr): technologie | Pred(en): technologie<br>Gold(ru): творческий | Pred(ru): творческий<br>Gold(nl): humanisme | Pred(fr): humanisme<br>Gold(hi): जीवन | Pred(hi): जीवन<br>
 <b>Type:</b> partial</div>
 </section>
 </body></html>

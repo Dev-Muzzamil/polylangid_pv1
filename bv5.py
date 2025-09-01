@@ -926,6 +926,9 @@ class EnhancedDetector:
             new = dict(dist)
             maxp = max(new.values())
 
+            # Enhanced engine disagreement detection
+            engine_disagreement = self._detect_engine_disagreement(tokens[i])
+            
             # Neighbor context
             window = dists[max(0,i-2):min(n,i+3)]
             neighbor_avg = 0.0
@@ -939,20 +942,42 @@ class EnhancedDetector:
             sc = dominant_script(tokens[i])
             sc_up = sc.upper() if sc else ""
 
-            th = UNKNOWN_INJECT_MAXP_THRESHOLD * (1.0 - 0.7*neighbor_avg)
-            th = min(0.10, th) if sc_up=="LATIN" else max(0.07, min(th, 0.25))
+            # Adaptive threshold based on context and engine disagreement
+            base_th = UNKNOWN_INJECT_MAXP_THRESHOLD * (1.0 - 0.7*neighbor_avg)
+            
+            # Increase threshold if engines disagree
+            if engine_disagreement:
+                base_th *= 1.3
+            
+            th = min(0.10, base_th) if sc_up=="LATIN" else max(0.07, min(base_th, 0.25))
 
+            # Short token adjustments
             if len(tokens[i])<=2:
                 th = min(th, 0.05 if sc_up=="LATIN" else 0.10)
+                # Extra uncertainty for very short tokens with engine disagreement
+                if engine_disagreement and len(tokens[i]) == 1:
+                    th *= 1.2
 
+            # Strong script confidence bypass
             if sc_up not in ['LATIN'] and maxp >= 0.18:
                 enriched.append(new)
                 continue
 
+            # Enhanced confidence assessment
             strong_hint = any(v>=0.25 for v in new.values()) or len(new)>=2
+            
+            # Check for known problematic patterns
+            is_problematic = self._is_problematic_token(tokens[i], new)
 
-            if maxp < th and not strong_hint:
-                unk = max(UNKNOWN_MIN_PROB, (th - maxp)*0.7)
+            # Inject unknown if confidence is low or engines disagree significantly
+            if (maxp < th and not strong_hint) or (engine_disagreement and maxp < 0.3) or is_problematic:
+                unk_factor = 0.7
+                if engine_disagreement:
+                    unk_factor = 0.9  # More aggressive unknown injection on disagreement
+                if is_problematic:
+                    unk_factor = 0.8
+                    
+                unk = max(UNKNOWN_MIN_PROB, (th - maxp)*unk_factor)
                 total_exist = sum(new.values())
                 scale = (1.0 - unk)/total_exist if total_exist>0 else 0.0
 
@@ -963,6 +988,69 @@ class EnhancedDetector:
             enriched.append(new)
 
         return enriched
+
+    def _detect_engine_disagreement(self, token: str) -> bool:
+        """
+        Detect if different engines (transformer vs fasttext vs patterns) disagree significantly.
+        """
+        predictions = {}
+        
+        # Get transformer prediction if available
+        if self.model_mgr.transformer:
+            try:
+                t_result = self.model_mgr.transformer_probs([token])
+                if t_result and t_result[0]:
+                    predictions['transformer'] = max(t_result[0], key=t_result[0].get)
+            except Exception:
+                pass
+        
+        # Get fasttext prediction if available
+        if self.model_mgr.fasttext:
+            try:
+                f_result = self.model_mgr.fasttext_probs_batch([token])
+                if f_result and f_result[0]:
+                    predictions['fasttext'] = max(f_result[0], key=f_result[0].get)
+            except Exception:
+                pass
+        
+        # Get pattern-based prediction
+        patterns = pattern_hint_scores(token.lower())
+        if patterns:
+            predictions['patterns'] = max(patterns, key=patterns.get)
+        
+        # Check for disagreement
+        if len(predictions) >= 2:
+            unique_predictions = set(predictions.values())
+            return len(unique_predictions) > 1
+        
+        return False
+
+    def _is_problematic_token(self, token: str, distribution: Dict[str, float]) -> bool:
+        """
+        Identify tokens that are known to be problematic for classification.
+        """
+        token_lower = token.lower()
+        
+        # Very short tokens are often problematic
+        if len(token) <= 2:
+            return True
+        
+        # Tokens with very flat distributions
+        if distribution:
+            values = list(distribution.values())
+            max_val = max(values)
+            if max_val < 0.4 and len([v for v in values if v > 0.15]) >= 3:
+                return True
+        
+        # Known problematic patterns
+        problematic_patterns = [
+            r'^[a-z]{1,3}$',  # Very short latin words
+            r'^\d+$',         # Pure numbers
+            r'^[^\w\s]+$',    # Pure punctuation
+            r'^(a|an|the|is|in|on|at|to|of|for|and|or|but)$',  # Common ambiguous words
+        ]
+        
+        return any(re.match(pattern, token_lower) for pattern in problematic_patterns)
 
     def _enhanced_disambiguate(self, dists: List[Dict[str,float]], tokens: List[str]) -> List[Dict[str,float]]:
         n = len(tokens)
@@ -994,13 +1082,11 @@ class EnhancedDetector:
             sc = dominant_script(tok)
             sc_up = sc.upper() if sc else ""
 
-            # --- Systemic English Suppression using Sentence Context ---
-            if sc_up == 'LATIN' and 'en' in dist and dominant_other_latin and dominant_count >= 2:
-                # If the sentence has strong evidence for another Latin lang, penalize English
-                # on ambiguous tokens (not matching strong English patterns)
-                is_ambiguous = not any(re.search(p, tl) for p in LANGUAGE_PATTERNS['en'])
-                if is_ambiguous:
-                    dist['en'] *= 0.1  # Heavy penalty
+            # --- Soft English Prior with Context Awareness ---
+            if sc_up == 'LATIN' and 'en' in dist:
+                # Calculate soft prior based on context
+                en_prior = self._calculate_soft_english_prior(tok, tokens, dominant_other_latin, dominant_count)
+                dist['en'] *= en_prior
 
             # --- Rebalanced Chinese vs. Japanese using Kana Sentence Prior ---
             if sc_up == 'HAN' and ('zh' in dist or 'ja' in dist):
@@ -1158,12 +1244,40 @@ class EnhancedDetector:
             ('hi','id'): 0.9, ('id','hi'): 0.9,
             ('ar','id'): 0.7, ('th','en'): 0.6,
             ('en','hi'): 0.45, ('hi','en'): 0.35,
-            ('id','en'): 0.35, ('en','id'): 0.35, # Increased penalty
+            ('id','en'): 0.35, ('en','id'): 0.35,
             ('fr','en'): 0.30, ('en','fr'): 0.20,
+            # Enhanced ZH/JA transition penalties
+            ('zh','ja'): 0.25, ('ja','zh'): 0.25,
+            # Enhanced UR/AR transition penalties for short tokens
+            ('ur','ar'): 0.20, ('ar','ur'): 0.20,
+            # Cross-script penalties
+            ('zh','en'): 0.40, ('en','zh'): 0.40,
+            ('ja','en'): 0.40, ('en','ja'): 0.40,
+            ('ar','en'): 0.35, ('en','ar'): 0.35,
+            ('ur','en'): 0.35, ('en','ur'): 0.35,
+            ('th','ja'): 0.50, ('ja','th'): 0.50,
         }
 
-        if (pl, cl) in implausible_transitions:
-            trans += implausible_transitions[(pl, cl)]
+        # Dynamic penalties based on token characteristics
+        penalty_adjustment = 0.0
+        
+        # Extra penalty for ZH/JA confusion on short tokens
+        if (pl, cl) in [('zh','ja'), ('ja','zh')] and len(cur_tok) <= 3:
+            penalty_adjustment += 0.15
+            
+        # Extra penalty for UR/AR confusion on short tokens  
+        if (pl, cl) in [('ur','ar'), ('ar','ur')] and len(cur_tok) <= 4:
+            penalty_adjustment += 0.15
+            
+        # Reduce penalty for script-consistent transitions
+        prev_script = dominant_script(prev_tok)
+        cur_script = dominant_script(cur_tok)
+        if prev_script and cur_script and prev_script == cur_script:
+            if prev_script.upper() in ['HAN', 'ARABIC', 'THAI']:
+                penalty_adjustment -= 0.05
+
+        base_penalty = implausible_transitions.get((pl, cl), 0.0)
+        trans += base_penalty + penalty_adjustment
 
         # Small discount for related languages (easier switch)
         try:
@@ -1268,15 +1382,39 @@ class EnhancedDetector:
         if not text or not text.strip():
             return []
 
+        # Step 1: MaskLID sentence wrapper to get candidate languages
+        candidate_languages = self._masklid_sentence_wrapper(text)
+
+        # Step 2: Tokenize with enhanced splitting
         tokens = tokenize(unicodedata.normalize('NFC', text))
         if not tokens:
             return [(text.strip(), "unknown")]
+
+        # Step 3: Apply Latin glue-splitter for boundary error reduction
+        tokens = self._latin_glue_splitter(tokens)
 
         # Pre-fuse with enhanced heuristics
         pre = [self._pre_fuse_token(t) for t in tokens]
 
         # Apply models and fuse
         fused = self._apply_models_and_fuse(tokens, pre)
+
+        # Step 4: Apply MaskLID constraints - filter distributions to only candidate languages
+        for i, dist in enumerate(fused):
+            if dist and candidate_languages:
+                # Keep only candidate languages in the distribution
+                filtered_dist = {}
+                for lang in dist:
+                    if lang in candidate_languages or lang == 'unknown':
+                        filtered_dist[lang] = dist[lang]
+                
+                # Renormalize if we have valid candidates
+                if filtered_dist and any(k != 'unknown' for k in filtered_dist):
+                    total = sum(filtered_dist.values())
+                    if total > 0:
+                        fused[i] = {k: v/total for k, v in filtered_dist.items()}
+                    else:
+                        fused[i] = filtered_dist
 
         # Heuristic fallback for low-confidence tokens
         for i, dist in enumerate(fused):
@@ -1285,7 +1423,9 @@ class EnhancedDetector:
                 tl = tokens[i].lower()
                 for d in (pattern_hint_scores(tl), script_candidate_score(tokens[i]), char_pattern_score(tl)):
                     for k, v in d.items():
-                        fb[k] = max(fb.get(k, 0), v)
+                        # Apply candidate language constraint here too
+                        if not candidate_languages or k in candidate_languages:
+                            fb[k] = max(fb.get(k, 0), v)
                 if fb:
                     tot = sum(fb.values())
                     fused[i] = {k: v/tot for k, v in fb.items()}
@@ -1304,14 +1444,16 @@ class EnhancedDetector:
         if unk_ratio >= UNKNOWN_RATIO_FALLBACK:
             guess = self._sentence_guess(tokens, fused)
             if guess and guess in TOP_20_LANGS:
-                new = []
-                for i, c in enumerate(chosen):
-                    if c != 'unknown':
-                        new.append(c)
-                        continue
-                    maxp = max(fused[i].values()) if fused[i] else 0.0
-                    new.append(guess if maxp < 0.08 else c)
-                chosen = new
+                # Prefer candidate languages for guessing
+                if not candidate_languages or guess in candidate_languages:
+                    new = []
+                    for i, c in enumerate(chosen):
+                        if c != 'unknown':
+                            new.append(c)
+                            continue
+                        maxp = max(fused[i].values()) if fused[i] else 0.0
+                        new.append(guess if maxp < 0.08 else c)
+                    chosen = new
 
         # Fill remaining unknowns
         chosen = self._fill_unknowns(tokens, chosen, fused)
@@ -1336,6 +1478,268 @@ class EnhancedDetector:
             merged.append((" ".join(buf), cur_lang))
 
         return [(seg.strip(), lang) for seg, lang in merged if seg.strip()]
+
+    def _masklid_sentence_wrapper(self, text: str) -> set:
+        """
+        MaskLID sentence wrapper - uses iterative masking to extract language set.
+        This constrains the token-level predictions to only languages present in the sentence.
+        """
+        if not text or not text.strip():
+            return set()
+        
+        # Step 1: Get initial sentence-level language predictions using different strategies
+        candidate_langs = set()
+        
+        # Strategy 1: Use fastText on the whole sentence (if available)
+        if self.model_mgr.fasttext:
+            try:
+                full_pred = self.model_mgr.fasttext.predict(text.replace('\n', ' '), k=5)
+                if len(full_pred) >= 2 and hasattr(full_pred[0], '__iter__'):
+                    labels, scores = full_pred
+                    for label, score in zip(labels, scores):
+                        if score > 0.1:  # Confidence threshold
+                            lang = label.replace('__label__', '')
+                            if lang in TOP_20_LANGS:
+                                candidate_langs.add(lang)
+            except Exception:
+                pass
+        
+        # Strategy 2: Use transformer on the whole sentence (if available)
+        if self.model_mgr.transformer:
+            try:
+                result = self.model_mgr.transformer(text, top_k=None)
+                if result and isinstance(result, list):
+                    for item in result:
+                        if item.get('score', 0) > 0.1:
+                            lang = item.get('label', '')
+                            if lang in TOP_20_LANGS:
+                                candidate_langs.add(lang)
+            except Exception:
+                pass
+        
+        # Strategy 3: Script-based language detection
+        scripts_found = set()
+        for char in text:
+            script = get_script(char)
+            if script:
+                scripts_found.add(script.upper())
+        
+        # Map scripts to languages
+        for script in scripts_found:
+            if script in PERFECT_SCRIPT_MAP:
+                candidate_langs.add(PERFECT_SCRIPT_MAP[script])
+            elif script in SCRIPT_LANG_MAP:
+                candidate_langs.update(SCRIPT_LANG_MAP[script][:3])  # Top 3 for each script
+        
+        # Strategy 4: Pattern-based detection for strong patterns
+        text_lower = text.lower()
+        for lang, patterns in LANGUAGE_PATTERNS.items():
+            if lang in TOP_20_LANGS:
+                for pattern in patterns[:5]:  # Check top 5 patterns
+                    if re.search(pattern, text_lower):
+                        candidate_langs.add(lang)
+                        break
+        
+        # Ensure we have at least a few candidates
+        if len(candidate_langs) < 2:
+            # Fallback to common languages based on script
+            if any(get_script(c) == 'LATIN' for c in text):
+                candidate_langs.update(['en', 'fr', 'es', 'de', 'it', 'pt'])
+            candidate_langs.update(['en'])  # Always include English as fallback
+        
+        # Limit to top 10 to prevent explosion
+        if len(candidate_langs) > 10:
+            # Prioritize by frequency in training data or use heuristics
+            prioritized = []
+            common_order = ['en', 'zh', 'es', 'hi', 'fr', 'ar', 'pt', 'ru', 'ja', 'de']
+            for lang in common_order:
+                if lang in candidate_langs:
+                    prioritized.append(lang)
+                if len(prioritized) >= 8:
+                    break
+            # Add remaining candidates
+            for lang in candidate_langs:
+                if lang not in prioritized and len(prioritized) < 10:
+                    prioritized.append(lang)
+            candidate_langs = set(prioritized)
+        
+        return candidate_langs
+
+    def _latin_glue_splitter(self, tokens: List[str]) -> List[str]:
+        """
+        Latin glue-splitter for long tokens to fix boundary errors.
+        Identifies and splits concatenated words in Latin scripts.
+        """
+        result = []
+        
+        for token in tokens:
+            if len(token) <= 6:  # Only split longer tokens
+                result.append(token)
+                continue
+                
+            script = dominant_script(token)
+            if not script or script.upper() != 'LATIN':
+                result.append(token)
+                continue
+            
+            # Try to split concatenated words
+            splits = self._try_split_concatenated(token)
+            if len(splits) > 1:
+                result.extend(splits)
+            else:
+                result.append(token)
+        
+        return result
+    
+    def _try_split_concatenated(self, token: str) -> List[str]:
+        """
+        Attempt to split a concatenated Latin token into constituent words.
+        Uses morphological patterns and common affixes.
+        """
+        if len(token) <= 6:
+            return [token]
+        
+        token_lower = token.lower()
+        
+        # Common prefixes and suffixes for different languages
+        prefixes = {
+            'un', 're', 'pre', 'dis', 'mis', 'over', 'under', 'anti', 'auto', 'co', 'counter',
+            'de', 'ex', 'extra', 'hyper', 'inter', 'intra', 'macro', 'micro', 'multi', 
+            'non', 'post', 'pro', 'pseudo', 'semi', 'sub', 'super', 'trans', 'ultra'
+        }
+        
+        suffixes = {
+            'ing', 'ed', 'er', 'est', 'ly', 'tion', 'sion', 'ness', 'ment', 'able', 'ible',
+            'ous', 'ful', 'less', 'ism', 'ist', 'ity', 'age', 'ance', 'ence', 'ship',
+            'ado', 'ando', 'endo', 'ido', 'ada', 'ida', 'mente', 'ción', 'sión',
+            'ment', 'tion', 'able', 'ible', 'eux', 'euse', 'ique', 'aire', 'oire',
+            'ung', 'keit', 'heit', 'lich', 'isch', 'bar', 'sam',
+            'ata', 'uto', 'ito', 'oso', 'osa', 'ivo', 'iva', 'evo', 'eva'
+        }
+        
+        # Try splitting at natural boundaries
+        best_splits = [token]
+        max_score = 0
+        
+        # Try different split positions
+        for i in range(3, len(token) - 2):
+            left = token_lower[:i]
+            right = token_lower[i:]
+            
+            # Score this split based on morphological patterns
+            score = 0
+            
+            # Bonus for common word patterns
+            if len(left) >= 3 and len(right) >= 3:
+                score += 1
+                
+            # Check if left part ends with common suffixes
+            for suffix in suffixes:
+                if left.endswith(suffix) and len(left) > len(suffix) + 2:
+                    score += 2
+                    break
+            
+            # Check if right part starts with common prefixes
+            for prefix in prefixes:
+                if right.startswith(prefix) and len(right) > len(prefix) + 2:
+                    score += 2
+                    break
+            
+            # Bonus for reasonable word lengths
+            if 3 <= len(left) <= 12 and 3 <= len(right) <= 12:
+                score += 1
+            
+            # Penalty for very uneven splits
+            ratio = min(len(left), len(right)) / max(len(left), len(right))
+            if ratio > 0.3:
+                score += 1
+            
+            if score > max_score:
+                max_score = score
+                best_splits = [token[:i], token[i:]]
+        
+        # Only split if we found a good boundary
+        if max_score >= 3:
+            # Recursively try to split the parts
+            final_splits = []
+            for part in best_splits:
+                sub_splits = self._try_split_concatenated(part)
+                final_splits.extend(sub_splits)
+            return final_splits
+        
+        return [token]
+
+    def _calculate_soft_english_prior(self, token: str, tokens: List[str], dominant_other_latin: Optional[str], dominant_count: int) -> float:
+        """
+        Calculate soft prior for English based on context.
+        Returns a factor between 0.3 and 1.0 to multiply English probability.
+        """
+        token_lower = token.lower()
+        
+        # Base prior is neutral
+        prior = 1.0
+        
+        # Factor 1: Strong English patterns get boosted
+        strong_english_patterns = [
+            r'\b(the|and|that|have|for|not|with|you|this|but|his|from|they)\b',
+            r'\b(was|were|been|has|had|will|would|could|should|might)\b',
+            r'\b(ing|ed|ly|tion|sion)$',
+            r'^(un|re|pre|dis|mis|over|under)',
+        ]
+        
+        if any(re.search(p, token_lower) for p in strong_english_patterns):
+            prior *= 1.2  # Boost for strong English indicators
+            return min(prior, 1.0)
+        
+        # Factor 2: Check for non-English characteristics
+        if dominant_other_latin and dominant_count >= 2:
+            # Strong evidence for another Latin language
+            
+            # Check if token matches the dominant language patterns
+            dominant_patterns = LANGUAGE_PATTERNS.get(dominant_other_latin, [])
+            if any(re.search(p, token_lower) for p in dominant_patterns[:5]):
+                prior *= 0.3  # Strong penalty if it matches another language
+            else:
+                # Check for general non-English characteristics
+                non_english_indicators = [
+                    (r'ñ|ç|ã|õ|ê|â|ô|á|é|í|ó|ú|à|è|ì|ò|ù', 0.4),  # Romance diacritics
+                    (r'ü|ä|ö|ß', 0.4),  # German umlauts
+                    (r'ą|ę|ł|ń|ó|ś|ź|ż', 0.4),  # Polish diacritics
+                    (r'ş|ğ|ı|ö|ü|ç', 0.4),  # Turkish characters
+                    (r'(zione|zione|ment|eur|euse)$', 0.5),  # Romance suffixes
+                    (r'(heit|keit|ung|lich)$', 0.5),  # German suffixes
+                    (r'(ość|acz|arz|nik)$', 0.5),  # Slavic suffixes
+                ]
+                
+                for pattern, penalty in non_english_indicators:
+                    if re.search(pattern, token_lower):
+                        prior *= penalty
+                        break
+                else:
+                    # Moderate penalty for ambiguous tokens in non-English context
+                    prior *= 0.6
+        
+        # Factor 3: Length-based adjustment
+        if len(token) <= 2:
+            prior *= 0.8  # Short tokens are less reliable for English
+        elif len(token) >= 8:
+            prior *= 1.1  # Longer tokens are more reliable
+        
+        # Factor 4: Context from surrounding tokens
+        non_english_context = 0
+        for context_token in tokens:
+            if context_token != token:
+                context_lower = context_token.lower()
+                if any(c in 'ñçãõêâôáéíóúàèìòùüäößąęłńóśźżşğıöüç' for c in context_lower):
+                    non_english_context += 1
+        
+        if non_english_context >= 3:
+            prior *= 0.5  # Strong non-English context
+        elif non_english_context >= 1:
+            prior *= 0.7  # Some non-English context
+        
+        # Ensure prior stays within bounds [0.3, 1.0]
+        return max(0.3, min(1.0, prior))
 
 # ------------------------------
 # Global API
