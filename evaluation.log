@@ -1,0 +1,4 @@
+2025-09-01 19:22:15,070 - D1_EnhancedPolyLangID - WARNING - Missing dependencies: ['transformers', 'torch', 'fasttext', 'jieba', 'janome', 'pythainlp', 'pyvi', 'Sastrawi']
+2025-09-01 19:22:15,071 - polylang_evaluate - INFO - Import time: 20.82ms (deterministic=False, cpu=True)
+2025-09-01 19:22:15,071 - polylang_evaluate - WARNING - sklearn not available: No module named 'sklearn'
+2025-09-01 19:22:15,078 - polylang_evaluate - WARNING - Visualization libraries not fully available: No module named 'matplotlib'

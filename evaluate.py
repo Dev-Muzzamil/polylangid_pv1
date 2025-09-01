@@ -59,7 +59,7 @@ if _known_args.deterministic:
 
 # Import with timing measurement (after env/seed setup)
 start_time = time.time()
-from v1 import detect_languages, batch_detect_languages  # type: ignore
+from bv5 import detect_languages, batch_detect_languages  # type: ignore
 logger.info(f"Import time: {(time.time()-start_time)*1000:.2f}ms (deterministic={_known_args.deterministic}, cpu={_known_args.cpu})")
 
 try:
