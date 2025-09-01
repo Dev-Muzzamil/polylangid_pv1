@@ -1,0 +1,2 @@
+# Ignore large model file
+models/xlmr/pytorch_model.bin
