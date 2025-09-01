@@ -1421,7 +1421,7 @@ class EnhancedDetector:
             if not dist or max(dist.values(), default=0.0) < 0.12:
                 fb = {}
                 tl = tokens[i].lower()
-                for d in (pattern_hint_scores(tl), script_candidate_score(tokens[i]), char_pattern_score(tl)):
+                for d in (enhanced_pattern_hint_scores(tl), script_candidate_score(tokens[i]), char_pattern_score(tl)):
                     for k, v in d.items():
                         # Apply candidate language constraint here too
                         if not candidate_languages or k in candidate_languages:
@@ -1740,6 +1740,61 @@ class EnhancedDetector:
         
         # Ensure prior stays within bounds [0.3, 1.0]
         return max(0.3, min(1.0, prior))
+
+# Enhanced pattern matching functions
+def enhanced_pattern_hint_scores(token_lower: str) -> Dict[str, float]:
+    """
+    Enhanced pattern matching with expanded patterns and better scoring.
+    """
+    scores = pattern_hint_scores(token_lower)  # Get base scores
+    
+    # Additional enhanced patterns for better discrimination
+    enhanced_patterns = {
+        'en': [
+            r'\b(about|there|what|when|where|while|before|after|during|through|without|between|because|although|however|therefore|moreover|furthermore|nevertheless)\b',
+            r'\b(also|just|only|still|even|already|yet|again|soon|always|often|sometimes|never|here|now|then|today|tomorrow|yesterday)\b',
+            r'\b(going|coming|looking|working|thinking|feeling|making|taking|getting|giving|telling|showing|knowing|finding)\b'
+        ],
+        'fr': [
+            r'\b(aussi|donc|alors|encore|déjà|jamais|toujours|souvent|parfois|beaucoup|peu|assez|trop|ici|maintenant|aujourd\'hui|demain|hier)\b',
+            r'\b(avoir|être|faire|aller|venir|voir|savoir|pouvoir|vouloir|devoir|prendre|donner|mettre|partir|sortir)\b'
+        ],
+        'de': [
+            r'\b(sehr|mehr|weniger|gut|besser|schon|noch|immer|nie|oft|manchmal|hier|dort|jetzt|heute|morgen|gestern)\b',
+            r'\b(gehen|kommen|sehen|wissen|können|müssen|sollen|wollen|machen|nehmen|geben|lassen|finden|denken)\b'
+        ],
+        'es': [
+            r'\b(también|solo|sólo|ya|aún|siempre|nunca|aquí|ahí|ahora|hoy|mañana|ayer|mucho|poco|bastante|demasiado)\b',
+            r'\b(hacer|ir|venir|ver|saber|poder|querer|deber|tomar|dar|poner|salir|llegar|estar|ser|tener)\b'
+        ],
+        'it': [
+            r'\b(ancora|già|mai|sempre|spesso|qui|ora|oggi|domani|ieri|tanto|poco|abbastanza|troppo)\b',
+            r'\b(fare|andare|venire|vedere|sapere|potere|volere|dovere|prendere|dare|mettere|uscire|arrivare)\b'
+        ],
+        'pt': [
+            r'\b(também|só|já|ainda|sempre|nunca|aqui|agora|hoje|amanhã|ontem|muito|pouco|bastante|demais)\b',
+            r'\b(fazer|ir|vir|ver|saber|poder|querer|dever|tomar|dar|pôr|sair|chegar|estar|ser|ter)\b'
+        ],
+        'id': [
+            r'\b(juga|hanya|masih|belum|sudah|selalu|sering|kadang|tidak|pernah|disini|sekarang|hari|besok|kemarin)\b',
+            r'\b(membuat|pergi|datang|melihat|tahu|bisa|ingin|harus|mengambil|memberi|menaruh|keluar|sampai)\b'
+        ]
+    }
+    
+    # Apply enhanced patterns
+    for lang, patterns in enhanced_patterns.items():
+        for pattern in patterns:
+            if re.search(pattern, token_lower):
+                scores[lang] = scores.get(lang, 0) + 0.3
+    
+    # Normalize scores
+    if scores:
+        max_score = max(scores.values())
+        if max_score > 1.0:
+            for lang in scores:
+                scores[lang] = min(1.0, scores[lang] / max_score)
+    
+    return scores
 
 # ------------------------------
 # Global API
